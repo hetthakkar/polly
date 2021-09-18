@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Player {
+  id           String        @id @default(uuid())
+  name         String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @default(now()) @updatedAt
+  room         Room?
+  roomPlayer   RoomPlayer?
+  playerAnswer PlayerAnswer?
+}
+
+model Room {
+  id         String      @id @default(uuid())
+  hostId     String
+  host       Player      @relation(fields: [hostId], references: [id])
+  key        String
+  question   Question?
+  roomPlayer RoomPlayer?
+}
+
+enum QuestionType {
+  MCQ // Multiple Choice
+  TF // True or False
+}
+
+model Question {
+  id           String        @id @default(uuid())
+  roomId       String
+  room         Room          @relation(fields: [roomId], references: [id])
+  createdAt    DateTime      @default(now())
+  mcqQuestion  MCQQuestion?
+  playerAnswer PlayerAnswer?
+}
+
+model MCQQuestion {
+  qid           String      @id
+  question      Question    @relation(fields: [qid], references: [id])
+  description   String
+  options       MCQOption[]
+  correctAnswer Int?
+}
+
+model MCQOption {
+  id          String      @id @default(uuid())
+  description String
+  questionId  String
+  mcqQuestion MCQQuestion @relation(fields: [questionId], references: [qid])
+}
+
+model RoomPlayer {
+  pid    String
+  player Player @relation(fields: [pid], references: [id])
+  roomId String
+  room   Room   @relation(fields: [roomId], references: [id])
+
+  @@id([pid, roomId])
+}
+
+model PlayerAnswer {
+  pid      String
+  player   Player   @relation(fields: [pid], references: [id])
+  qid      String
+  question Question @relation(fields: [qid], references: [id])
+  answer   String
+
+
+  @@id([pid, qid])
+}

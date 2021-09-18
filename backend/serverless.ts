@@ -7,6 +7,7 @@ const serverlessConfiguration: AWS = {
     'serverless-plugin-typescript',
     'serverless-offline'
   ],
+  useDotenv: true,
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -20,13 +21,24 @@ const serverlessConfiguration: AWS = {
     lambdaHashingVersion: '20201221',
   },
   functions: {
-    hello: {
-      handler: 'src/handler.hello',
+    connectionHandler: {
+      handler: 'src/connection.handler',
       events: [
         {
           http: {
             path: '/hello',
             method: 'GET'
+          }
+        },
+      ]
+    },
+    createRoom: {
+      handler: 'src/createRoom.handler',
+      events: [
+        {
+          http: {
+            path: '/create-room',
+            method: 'POST'
           }
         }
       ]

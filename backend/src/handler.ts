@@ -6,6 +6,7 @@ module.exports.hello = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
     body: JSON.stringify(
       {
         message: 'Go Serverless v1.0! Your function executed successfully!',
+        envVars: process.env,
         input: event,
       },
       null,

@@ -1,10 +1,4 @@
-# package directories
 node_modules
-jspm_packages
-
-# Serverless directories
-.serverless
+# Keep environment variables out of version control
+*.env
 .build
-
-# Webpack directories
-.webpack
