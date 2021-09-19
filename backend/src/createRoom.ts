@@ -1,7 +1,7 @@
 import middy from '@middy/core';
 import httpJsonBodyParser from '@middy/http-json-body-parser';
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { PrismaClient } from '@prisma/client'
+import { Player, PrismaClient } from '@prisma/client'
 import { generateRoomKey } from './utils/generateRoomKey';
 const prisma = new PrismaClient()
 
@@ -9,7 +9,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
 
   const { playerId, name } = event.body as any;
 
-  let player;
+  let player: Player | null;
   if (!playerId) {
     player = await prisma.player.create({
       data: {
@@ -24,12 +24,19 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
     })
   }
 
+  if (!player) {
+    return {
+      statusCode: 500,
+      body: "Could not create room"
+    }
+  }
+
   const key = generateRoomKey();
 
-  const room = await prisma.room.create({
+const room = await prisma.room.create({
     data: {
       host: {
-        connect: { id: playerId }
+        connect: { id: player.id }
       },
       key,
     }
