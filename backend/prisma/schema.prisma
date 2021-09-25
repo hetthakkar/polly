@@ -15,7 +15,7 @@ model Player {
   name         String
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @default(now()) @updatedAt
-  room         Room?
+  room         Room[]
   roomPlayer   RoomPlayer?
   playerAnswer PlayerAnswer?
 }
@@ -25,8 +25,8 @@ model Room {
   hostId     String
   host       Player      @relation(fields: [hostId], references: [id])
   key        String
-  question   Question?
-  roomPlayer RoomPlayer?
+  question   Question[]
+  roomPlayer RoomPlayer[]
 }
 
 enum QuestionType {
@@ -61,10 +61,10 @@ model MCQOption {
 model RoomPlayer {
   pid    String
   player Player @relation(fields: [pid], references: [id])
-  roomId String
-  room   Room   @relation(fields: [roomId], references: [id])
+  roomKey String
+  room   Room   @relation(fields: [roomKey], references: [id])
 
-  @@id([pid, roomId])
+  @@id([pid, roomKey])
 }
 
 model PlayerAnswer {

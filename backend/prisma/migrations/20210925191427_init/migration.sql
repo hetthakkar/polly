@@ -14,7 +14,6 @@ CREATE TABLE `Room` (
     `hostId` VARCHAR(191) NOT NULL,
     `key` VARCHAR(191) NOT NULL,
 
-    UNIQUE INDEX `Room_hostId_unique`(`hostId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -24,7 +23,6 @@ CREATE TABLE `Question` (
     `roomId` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
-    UNIQUE INDEX `Question_roomId_unique`(`roomId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -52,7 +50,6 @@ CREATE TABLE `RoomPlayer` (
     `roomId` VARCHAR(191) NOT NULL,
 
     UNIQUE INDEX `RoomPlayer_pid_unique`(`pid`),
-    UNIQUE INDEX `RoomPlayer_roomId_unique`(`roomId`),
     PRIMARY KEY (`pid`, `roomId`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

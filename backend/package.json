@@ -5,12 +5,17 @@
   "main": "index.js",
   "dependencies": {
     "@middy/core": "^2.5.1",
+    "@middy/http-error-handler": "^2.5.1",
     "@middy/http-json-body-parser": "^2.5.1",
-    "@prisma/client": "^3.0.2"
+    "@prisma/client": "^3.0.2",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.55.0",
     "@types/aws-lambda": "^8.10.83",
+    "@types/http-errors": "^1.8.1",
+    "@types/jsonwebtoken": "^8.5.5",
     "@types/node": "^16.9.1",
     "prisma": "^3.0.2",
     "serverless": "^2.59.0",
