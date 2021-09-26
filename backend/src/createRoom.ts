@@ -17,7 +17,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
 
   const key = generateRoomKey(); // Generate random room code
   console.log('Key is', key);
-  const token = createToken(player.id); // Generate player auth token-
+  const token = createToken(player.id); // Generate player auth token to be attached with every subsequent request
 
   const room = await prisma.room.create({
     data: {

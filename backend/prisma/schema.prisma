@@ -39,6 +39,7 @@ model Question {
   roomId       String
   room         Room          @relation(fields: [roomId], references: [id])
   createdAt    DateTime      @default(now())
+  isPublished  Boolean       @default(false)
   mcqQuestion  MCQQuestion?
   playerAnswer PlayerAnswer?
 }
