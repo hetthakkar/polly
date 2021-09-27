@@ -8,6 +8,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 model Player {
@@ -16,8 +17,8 @@ model Player {
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @default(now()) @updatedAt
   room         Room[]
-  roomPlayer   RoomPlayer?
-  playerAnswer PlayerAnswer?
+  roomPlayer   RoomPlayer[]
+  playerAnswer PlayerAnswer[]
 }
 
 model Room {
@@ -42,7 +43,7 @@ model Question {
   isPublished  Boolean       @default(false)
   questionType QuestionType
   mcqQuestion  MCQQuestion?
-  playerAnswer PlayerAnswer?
+  playerAnswer PlayerAnswer[]
 }
 
 model MCQQuestion {
@@ -59,7 +60,7 @@ model MCQOption {
   questionId  String
   createdAt   DateTime    @default(now())
   mcqQuestion MCQQuestion @relation(fields: [questionId], references: [qid], onDelete: Cascade)
-  mCQQuestionPlayerAnswer MCQQuestionPlayerAnswer?
+  mCQQuestionPlayerAnswer MCQQuestionPlayerAnswer[]
 }
 
 model RoomPlayer {

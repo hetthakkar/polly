@@ -1,7 +1,9 @@
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
-  service: 'aws-nodejs-typescript',
+  org: 'hettest',
+  app: 'seproject',
+  service: 'backend',
   frameworkVersion: '2',
   plugins: [
     'serverless-plugin-typescript',
@@ -75,8 +77,25 @@ const serverlessConfiguration: AWS = {
           }
         }
       ]
+    },
+    fetchAnalytics: {
+      handler: 'src/fetchAnalytics.handler',
+      events: [
+        {
+          http: {
+            path: '/fetch-analytics',
+            method: 'POST'
+          }
+        }
+      ]
     }
   },
+  package: {
+    patterns: [
+      '!node_modules/.prisma/client/libquery_engine-*',
+      'node_modules/.prisma/client/libquery_engine-rhel-*',
+    ]
+  }
 };
 
 module.exports = serverlessConfiguration;
