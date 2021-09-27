@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.create-room-input{
+    background: #8DBCE7;
+    border-radius: 20px;
+}
+
+.create-room-text{
+    width: 196px;
+    height: 29px;
+    left: 28px;
+    top: 234px;
+
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 25px;
+
+    color: #000000;
+}
