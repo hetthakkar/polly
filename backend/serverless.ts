@@ -42,6 +42,39 @@ const serverlessConfiguration: AWS = {
           }
         }
       ]
+    },
+    createMCQQuestion: {
+      handler: 'src/createMCQQuestion.handler',
+      events: [
+        {
+          http: {
+            path: '/create-mcq-question',
+            method: 'POST',
+          }
+        }
+      ]
+    },
+    enterRoom: {
+      handler: 'src/enterRoom.handler',
+      events: [
+        {
+          http: {
+            path: '/enter-room',
+            method: 'POST'
+          }
+        }
+      ]
+    },
+    voteMCQQuestion: {
+      handler: 'src/voteMCQQuestion.handler',
+      events: [
+        {
+          http: {
+            path: '/vote-mcq',
+            method: 'POST'
+          }
+        }
+      ]
     }
   },
 };

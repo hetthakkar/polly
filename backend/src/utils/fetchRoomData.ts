@@ -29,7 +29,24 @@ export async function fetchRoomData(roomKey: string, onlyFetchPublished: boolean
       isPublished: !onlyFetchPublished,
     },
     select: {
-      mcqQuestion: true,
+      id: true,
+      mcqQuestion: {
+        select: {
+          qid: true,
+          description: true,
+          options: {
+            select: {
+              id: true,
+              description: true,
+            },
+            orderBy: [
+              {
+                id: 'asc'
+              }
+            ]
+          },
+        }
+      },
     }
   })
 
@@ -41,6 +58,7 @@ export async function fetchRoomData(roomKey: string, onlyFetchPublished: boolean
     }
   });
 
+  return questionData;
 
   // TODO Add room fetching logic for more question types
 

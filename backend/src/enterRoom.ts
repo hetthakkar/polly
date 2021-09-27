@@ -8,6 +8,8 @@ import { createOrFetchPlayer } from './utils/createOrFetchPlayer';
 import createHttpError from 'http-errors';
 import { fetchRoomData } from './utils/fetchRoomData';
 import { createToken } from './utils/createToken';
+import { validateEventSchema } from './utils/validateEventSchema';
+import Joi from 'joi';
 const prisma = new PrismaClient();
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -19,21 +21,37 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
     throw new createHttpError.InternalServerError('Unable to fetch/create player data');
   }
 
+  const { id: roomId } = (await prisma.room.findFirst({
+    where: {
+      key: roomKey,
+    },
+    select: {
+      id: true,
+    }
+  }))!;
+
+  if(!roomId) {
+    throw new createHttpError.BadRequest('Invalid room key');
+  }
+
   // Add this player to the list of players in the room
   try {
     await prisma.roomPlayer.create({
       data: {
         pid: player.id,
-        roomKey
+        roomId,
       }
     })
   } catch (error) {
-    console.log('Unable to add player to room');
-    throw new createHttpError.InternalServerError('Unable to create room')
+    console.log(error);
+    throw new createHttpError.InternalServerError('Unable to add player to room')
   }
 
   const questionData = await fetchRoomData(roomKey, true, prisma);
   const token = createToken(player.id);
+
+  console.log(questionData);
+  
 
   return {
     body: JSON.stringify({
@@ -47,6 +65,10 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
 handler
   .use(httpJsonBodyParser())
   .use(checkAuth())
+  .use(validateEventSchema(Joi.object({
+    name: Joi.string().required(),
+    roomKey: Joi.string().required(),
+  })))
   .use(httpErrorHandler())
   
 module.exports.handler = handler;
