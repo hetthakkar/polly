@@ -10,12 +10,14 @@ import "assets/styles/tailwind.css";
 //import Admin from "layouts/Admin.js";
 import Index from "views/Index.js";
 import CreateRoom from "views/CreateRoom";
+import CreateQuestions from "views/CreateQuestion";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       {/* add routes with layouts */}
       <Route path="/create-room" component={CreateRoom} />
+      <Route path="/create-questions" component={CreateQuestions} />
       <Route path="/" exact component={Index} />
       {/* add redirect for first page */}
       <Redirect from="*" to="/" />
