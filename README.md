@@ -70,7 +70,6 @@ Sample
 
 <h1> Things that have been done in Phase 1 </h1>
 
-
 * Wrtiting the Read.me
 * Designing the Wireframe
 * Setting up Backend
