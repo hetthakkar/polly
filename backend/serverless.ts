@@ -1,4 +1,13 @@
 import type { AWS } from '@serverless/typescript';
+import { moveCursor } from 'readline';
+
+const cors = {
+  origin: '*',
+  headers: [
+    'Content-Type',
+    'AUTH_TOKEN'
+  ]
+}
 
 const serverlessConfiguration: AWS = {
   org: 'hettest',
@@ -29,7 +38,8 @@ const serverlessConfiguration: AWS = {
         {
           http: {
             path: '/hello',
-            method: 'GET'
+            method: 'GET',
+            cors,
           }
         },
       ]
@@ -40,7 +50,8 @@ const serverlessConfiguration: AWS = {
         {
           http: {
             path: '/create-room',
-            method: 'POST'
+            method: 'POST',
+            cors
           }
         }
       ]
@@ -52,6 +63,7 @@ const serverlessConfiguration: AWS = {
           http: {
             path: '/create-mcq-question',
             method: 'POST',
+            cors,
           }
         }
       ]
@@ -62,7 +74,8 @@ const serverlessConfiguration: AWS = {
         {
           http: {
             path: '/enter-room',
-            method: 'POST'
+            method: 'POST',
+            cors
           }
         }
       ]
@@ -73,7 +86,8 @@ const serverlessConfiguration: AWS = {
         {
           http: {
             path: '/vote-mcq',
-            method: 'POST'
+            method: 'POST',
+            cors
           }
         }
       ]
@@ -84,7 +98,8 @@ const serverlessConfiguration: AWS = {
         {
           http: {
             path: '/fetch-analytics',
-            method: 'POST'
+            method: 'POST',
+            cors
           }
         }
       ]

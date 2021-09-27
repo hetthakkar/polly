@@ -1,12 +1,13 @@
 import middy from '@middy/core';
 import httpJsonBodyParser from '@middy/http-json-body-parser';
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { Player, PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 import { generateRoomKey } from './utils/generateRoomKey';
 import { checkAuth } from './utils/checkAuth';
 import { createToken } from './utils/createToken';
 import httpErrorHandler from '@middy/http-error-handler';
 import { createOrFetchPlayer } from './utils/createOrFetchPlayer';
+import cors from '@middy/http-cors';
 const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -41,5 +42,8 @@ handler
   .use(httpJsonBodyParser())
   .use(checkAuth())
   .use(httpErrorHandler())
+  .use(cors({
+    origin: process.env.ALLOWED_ORIGIN
+  }))
 
 module.exports.handler = handler

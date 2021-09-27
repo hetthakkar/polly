@@ -10,14 +10,15 @@ import { fetchRoomData } from './utils/fetchRoomData';
 import { createToken } from './utils/createToken';
 import { validateEventSchema } from './utils/validateEventSchema';
 import Joi from 'joi';
+import cors from '@middy/http-cors';
 const prisma = new PrismaClient();
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
-  const {playerId, name, roomKey} = event.body as any;
-  const player = await createOrFetchPlayer({playerId, name}, prisma);
+  const { playerId, name, roomKey } = event.body as any;
+  const player = await createOrFetchPlayer({ playerId, name }, prisma);
 
-  if(!player) {
+  if (!player) {
     throw new createHttpError.InternalServerError('Unable to fetch/create player data');
   }
 
@@ -30,7 +31,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
     }
   }))!;
 
-  if(!roomId) {
+  if (!roomId) {
     throw new createHttpError.BadRequest('Invalid room key');
   }
 
@@ -51,7 +52,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
   const token = createToken(player.id);
 
   console.log(questionData);
-  
+
 
   return {
     body: JSON.stringify({
@@ -70,5 +71,8 @@ handler
     roomKey: Joi.string().required(),
   })))
   .use(httpErrorHandler())
-  
+  .use(cors({
+    origin: process.env.ALLOWED_ORIGIN
+  }))
+
 module.exports.handler = handler;

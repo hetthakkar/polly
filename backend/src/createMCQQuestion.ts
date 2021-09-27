@@ -8,6 +8,7 @@ import createHttpError from 'http-errors';
 import { verifyHost } from './utils/verifyHost';
 import Joi from 'joi';
 import { validateEventSchema } from './utils/validateEventSchema';
+import cors from '@middy/http-cors';
 const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -69,5 +70,8 @@ handler
       ).length(4).required(),
     })))
   .use(httpErrorHandler())
+  .use(cors({
+    origin: process.env.ALLOWED_ORIGIN
+  }))
 
 module.exports.handler = handler
