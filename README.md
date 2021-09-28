@@ -51,7 +51,7 @@ serverless offline
 
 <h1> 💻 Steps for execution </h1>
 
-1. e
+1. 
 ```
 Sample
 ```
@@ -59,16 +59,16 @@ Sample
 ```
 Sample
 ```
-3. d
+3. 
 ```
 Sample
 ```
-4. d
+4. 
 ```
 Sample
 ```
 
-5. f
+5. 
 ```
 Sample
 ```
