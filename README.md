@@ -76,10 +76,12 @@ Sample
 
 <h1> ✅ Things that have been done in Phase 1 </h1>
 
-* Wrtiting the Read.me
 * Designing the Wireframe
-* Setting up Backend
-* Setting up Frontend
+* Creation of Architecture and UML Diagram
+* Coding up Backend in AWS
+* Coding up Frontend
+* Coding API
+* Creation of Relational Tables
 
 <h1> 📬 Team Members </h1>
 
