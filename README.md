@@ -9,6 +9,7 @@
 
 ![Codecov](https://img.shields.io/codecov/c/github/Hetthakkar/polly)
 ![GitHub contributors](https://img.shields.io/github/contributors/Hetthakkar/polly)
+![GitHub language count](https://img.shields.io/github/languages/count/Hetthakkar/polly)
 ![GitHub](https://img.shields.io/github/license/Hetthakkar/polly)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Hetthakkar/polly)
 ![Lines of code](https://img.shields.io/tokei/lines/github/Hetthakkar/polly)
@@ -16,7 +17,7 @@
 
 </div>
 
-<h1> Project Video </h1>
+<h1> 📹 Project Video </h1>
 
 https://user-images.githubusercontent.com/89552657/135091392-ab34da70-89fe-4673-bf68-32c206751b59.mp4
 
@@ -32,7 +33,7 @@ Polly Me is an app open for all and developed as part of the CSC 510 Software En
 
 <img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/UML%20Diagram.png" width="600"/>
 
-<h1> Local development setup </h1>
+<h1> 🚀 Local development setup </h1>
 
 - Create an .env file from the template `env.example`
 - Populate `env.example` with the appropriate key value pairs(NOTE: You'll have to have your database setup before this step)
@@ -73,7 +74,7 @@ Sample
 ```
 
 
-<h1> Things that have been done in Phase 1 </h1>
+<h1> ✅ Things that have been done in Phase 1 </h1>
 
 * Wrtiting the Read.me
 * Designing the Wireframe
