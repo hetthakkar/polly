@@ -16,7 +16,11 @@
 
 </div>
 
-<h1> What is Polly Me about? </h1>
+<h1> Project Video </h1>
+
+<h1> 💎 What is Polly Me about? </h1>
+
+Polly Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. It allows people to create their own virtual room in which they can create questions and share them with an unlimited number of people.
 
 <h1> Architecture </h1>
 
@@ -43,7 +47,7 @@ serverless offline
 ```
 
 
-<h1> Steps for execution </h1>
+<h1> 💻 Steps for execution </h1>
 
 1. e
 ```
