@@ -24,12 +24,11 @@ Polly Me is an app open for all and developed as part of the CSC 510 Software En
 
 <h1> Architecture </h1>
 
-![Architecture](https://user-images.githubusercontent.com/89552657/134991456-506a1266-c0a2-4523-a20e-c0a5c88d521d.jpeg)
+<img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/Architecture.png" width="600"/>
 
 <h1> UML Diagram </h1>
 
-![UML Diagram](https://user-images.githubusercontent.com/89552657/134991457-fe107b9f-cbb0-4fe1-9958-ee1de68b0a6b.jpeg)
-
+<img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/UML%20Diagram.png" width="600"/>
 
 <h1> Local development setup </h1>
 
@@ -73,7 +72,6 @@ Sample
 
 
 <h1> Things that have been done in Phase 1 </h1>
-
 
 * Wrtiting the Read.me
 * Designing the Wireframe
