@@ -8,6 +8,7 @@
 </div>
 
 ![Codecov](https://img.shields.io/codecov/c/github/Hetthakkar/polly)
+![GitHub top language](https://img.shields.io/github/languages/top/Hetthakkar/polly)
 ![GitHub contributors](https://img.shields.io/github/contributors/Hetthakkar/polly)
 ![GitHub language count](https://img.shields.io/github/languages/count/Hetthakkar/polly)
 ![GitHub](https://img.shields.io/github/license/Hetthakkar/polly)
