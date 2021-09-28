@@ -1,12 +1,14 @@
 /*eslint-disable*/
-import React, { useState } from "react";
+import { MyContext } from 'components/App';
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/createRoom.css";
 import createNewRoomCallback from "../util/createNewRoom";
 
-export default function CreateRoom() {
+export default function CreateRoom({router}) {
 
     const [name, setName] = useState('')
+    const { hostId, setHostId } = useContext(MyContext);
     return (
         <>
             <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
@@ -106,7 +108,12 @@ export default function CreateRoom() {
                             </div>
                             <div className="mt-12">
                                 <div
-                                    onClick={() => createNewRoomCallback(name)}
+                                    onClick={async () => {
+                                        const { room, token } = await createNewRoomCallback(name);
+                                        console.log(room, token);
+                                        setHostId(room.hostId);
+                                        router.push('/');
+                                    }}
                                     target="_blank"
                                     className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                                 >

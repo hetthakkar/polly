@@ -1,10 +1,9 @@
 var axios = require('axios');
 export default async function createNewRoomCallback(name) {
-    var data = JSON.stringify({
-        name
-    });
 
-    const res = await axios.post("http://localhost:3000/dev/create-room", data,
+    const { data } = await axios.post("http://localhost:3000/dev/create-room", {
+        name
+    },
         {
             headers: {
                 'Content-Type': 'application/json'
@@ -12,5 +11,6 @@ export default async function createNewRoomCallback(name) {
         }
     );
 
-    console.log(res);
+    console.log('INside callback',data);
+    return data;
 }
