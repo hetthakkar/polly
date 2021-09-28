@@ -23,13 +23,13 @@ https://user-images.githubusercontent.com/89552657/135091392-ab34da70-89fe-4673-
 
 <h1> 💎 What is Polly Me about? </h1>
 
-Polly Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. It allows people to create their own virtual room in which they can create questions and share them with an unlimited number of people.
+Polly Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. Want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Polly Me is the right place for you. This app enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
 
-<h1> Architecture </h1>
+<h1> 📐 Architecture </h1>
 
 <img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/Architecture.png" width="600"/>
 
-<h1> UML Diagram </h1>
+<h1> 📊 UML Diagram </h1>
 
 <img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/UML%20Diagram.png" width="600"/>
 
@@ -81,7 +81,7 @@ Sample
 * Setting up Backend
 * Setting up Frontend
 
-<h1> Team Members </h1>
+<h1> 📬 Team Members </h1>
 
 Het Thakkar
 
