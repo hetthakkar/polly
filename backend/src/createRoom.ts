@@ -8,6 +8,8 @@ import { createToken } from './utils/createToken';
 import httpErrorHandler from '@middy/http-error-handler';
 import { createOrFetchPlayer } from './utils/createOrFetchPlayer';
 import cors from '@middy/http-cors';
+import { validateEventSchema } from './utils/validateEventSchema';
+import Joi from 'joi';
 const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -17,7 +19,6 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
   const player = await createOrFetchPlayer({playerId, name}, prisma);
 
   const key = generateRoomKey(); // Generate random room code
-  console.log('Key is', key);
   const token = createToken(player.id); // Generate player auth token to be attached with every subsequent request
 
   const room = await prisma.room.create({
@@ -26,6 +27,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
         connect: { id: player.id }
       },
       key,
+      title
     }
   })
 
@@ -41,6 +43,10 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
 handler
   .use(httpJsonBodyParser())
   .use(checkAuth())
+  .use(validateEventSchema(Joi.object({
+    name: Joi.string().required(),
+    title: Joi.string().required(),
+  })))
   .use(httpErrorHandler())
   .use(cors({
     origin: process.env.ALLOWED_ORIGIN
