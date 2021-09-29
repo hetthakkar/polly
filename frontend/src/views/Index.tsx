@@ -15,7 +15,7 @@ export default function Index() {
               </div>
               <div className='font-semibold text-2xl text-blueGray-600'>
                 {' '}
-                Welcome to the Polly app!
+                Welcome to the polling app!
               </div>
               <br />
               <Link to='/create-room'>
@@ -28,7 +28,7 @@ export default function Index() {
                 </div>
               </Link>
               {/* </div> */}
-              <PlayerQuestion
+              {/* <PlayerQuestion
                 question={{
                   description: 'Which programming language do you like most?',
                   id: 'qid-123',
@@ -47,7 +47,7 @@ export default function Index() {
                   console.log('Option selected', qid, oid)
                   //TODO Call vote-mcq API
                 }}
-              />
+              /> */}
             </div>
           </div>
         </div>

@@ -1,11 +1,12 @@
 /*eslint-disable*/
-import React, { useState } from "react";
+import { AppContext } from '../components/App';
+import React, { useContext, useState } from "react";
 import "../assets/styles/createRoom.css";
 // import createNewRoomCallback from "../util/createNewRoom";
 
 export default function EnterRoom() {
 
-    const [name, setName] = useState('')
+    const {name, setName} = useContext(AppContext);
     return (
         <>
             <section className="relative pt-16 items-center flex h-screen max-h-860-px">
