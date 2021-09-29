@@ -13,7 +13,7 @@ export default function CreateRoom({ history }: RouteComponentProps) {
         <div className='container mx-auto items-center flex flex-wrap'>
           <div className='w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4'>
             <div className="w-2/3 row flex flex-col justify-center items-center">
-              <span className='flex flex-col justify-center items-center mb-2 items-center text-4xl font-medium place-content-center mb-12'>
+              <span className='font-semibold flex flex-col justify-center items-center mb-2 items-center text-4xl font-medium place-content-center mb-12'>
                 Create a personal room
               </span>
               <div className="row flex flex-col justify-center items-center">
@@ -26,7 +26,7 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                   onChange={(event) => {
                     setName(event.target.value)
                   }}
-                  className='bg-lightBlue-500 text-white placeholder-white::placeholder rounded-lg' placeholder="Enter you name" style={{ color: '#BEE3F8' }}
+                  className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-400' placeholder="Enter you name" 
                 ></input>
               </div>
               <div className='row flex flex-col justify-center items-center' >
@@ -40,7 +40,7 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                   onChange={(event) => {
                     setTitle(event.target.value)
                   }}
-                  className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-500' placeholder="Enter room name"
+                  className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-400' placeholder="Enter room name"
                 ></input>
               </div>
               <div className='mt-12'>
