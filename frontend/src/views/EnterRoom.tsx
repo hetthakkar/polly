@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React, { useState } from "react";
 import "../assets/styles/createRoom.css";
-import createNewRoomCallback from "../util/createNewRoom";
+// import createNewRoomCallback from "../util/createNewRoom";
 
 export default function EnterRoom() {
 
@@ -32,14 +32,8 @@ export default function EnterRoom() {
                                 <input id="room_name" className="create-room-input get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"></input>
                             </div>
                             <div className="mt-12">
-
-
-
-    // Check the onclick function below //
-
-
                                 <div
-                                    onClick={() => createNewRoomCallback(name)}
+                                    // onClick={() => createNewRoomCallback(name)}
                                     className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                                 >
                                     Join Room
