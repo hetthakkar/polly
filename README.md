@@ -22,9 +22,9 @@
 
 https://user-images.githubusercontent.com/89552657/135091392-ab34da70-89fe-4673-bf68-32c206751b59.mp4
 
-<h1> 💎 What is Polly Me about? </h1>
+<h1> 💎 What is Poll Me about? </h1>
 
-Polly Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. Want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Polly Me is the right place for you. This app enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
+Poll Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. Want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Poll Me is the right place for you. This app enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
 
 <h1> 📐 Architecture </h1>
 
