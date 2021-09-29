@@ -1,4 +1,16 @@
-export default function PlayerQuestion({ question, options, onOptionSelected }) {
+interface Props {
+  question: {
+    description: string;
+    id: string;
+  };
+  options: {
+    description: string;
+    id: number;
+  }[];
+  onOptionSelected: (qid: string, optionId: number) => void;
+}
+
+export default function PlayerQuestion({ question, options, onOptionSelected }: Props) {
   return <div className="flex flex-col" style={{ width: '80vw' }}>
     <div className="font-medium text-xl text-center">
       {question.description}

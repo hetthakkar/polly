@@ -1,18 +1,4 @@
-/*eslint-disable*/
-import React, { useState } from "react";
-import "../assets/styles/createRoom.css";
-import createNewRoomCallback from "../util/createNewRoom";
-
-export default function EnterRoom() {
-
-    const [name, setName] = useState('')
-    return (
-        <>
-            <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
-                <div className="container mx-auto items-center flex flex-wrap">
-                    <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
-                        <div className="flex flex-col justify-center items-center">
-                        <svg width="224" height="177" viewBox="0 0 224 177" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="224" height="177" viewBox="0 0 224 177" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M140.851 161.32L137.465 161.32L135.854 148.263L140.852 148.263L140.851 161.32Z" fill="#9E616A" />
                                 <path d="M141.715 164.601L130.797 164.601V164.462C130.797 163.336 131.244 162.255 132.041 161.459C132.838 160.662 133.919 160.214 135.046 160.214H135.047L141.715 160.214L141.715 164.601Z" fill="#2F2E41" />
                                 <path d="M128.699 161.32L125.312 161.32L123.702 148.263L128.699 148.263L128.699 161.32Z" fill="#9E616A" />
@@ -84,49 +70,4 @@ export default function EnterRoom() {
                                 <path d="M78.1286 66.2868L66.0527 69.4356L59.3085 61.5217C58.4254 60.4854 57.9823 59.1451 58.074 57.7868C58.1656 56.4285 58.7846 55.1598 59.7989 54.2514C60.8133 53.343 62.1426 52.8669 63.5032 52.9247C64.8638 52.9824 66.1479 53.5695 67.0815 54.5605L78.1286 66.2868Z" fill="#2F2E41" />
                                 <path d="M171.73 164.83H9.30927C9.23003 164.83 9.15403 164.799 9.098 164.743C9.04197 164.687 9.0105 164.611 9.0105 164.532C9.0105 164.453 9.04197 164.377 9.098 164.321C9.15403 164.265 9.23003 164.233 9.30927 164.233H171.73C171.809 164.233 171.885 164.265 171.941 164.321C171.997 164.377 172.028 164.453 172.028 164.532C172.028 164.611 171.997 164.687 171.941 164.743C171.885 164.799 171.809 164.83 171.73 164.83Z" fill="#CACACA" />
                             </svg>
-                        <h1>
-                            
-                        </h1>
-                        </div>
-
-                        <div className="flex flex-col justify-center items-center">
-                            <div className="row flex flex-col justify-center items-center">
-                                <br />
-                                <label className="create-room-text flex flex-col justify-center items-center">User Name</label>
-                                <input id="host_name" type="text" onChange={(event) => {
-                                    setName(event.target.value);
-                                }} className="create-room-input get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"></input>
-                            </div>
-                            <div className="row flex flex-col justify-center items-center">
-                                <br />
-                                <label className="create-room-text flex flex-col justify-center items-center">Room Name</label>
-                                <input id="room_name" className="create-room-input get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"></input>
-                            </div>
-                            <div className="mt-12">
-
-
-
-    // Check the onclick function below //
-
-
-                                <div
-                                    onClick={() => createNewRoomCallback(name)}
-                                    target="_blank"
-                                    className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                                >
-                                    Join Room
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <img
-                    className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px"
-                    src={require("assets/img/pattern_react.png").default}
-                    alt="..."
-                />
-            </section>
-        </>
-    );
-}
+                        

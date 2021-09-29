@@ -1,5 +1,5 @@
 var axios = require('axios');
-export default async function createNewRoomCallback(name) {
+export default async function createNewRoomCallback(name: string) {
 
     const { data } = await axios.post("http://localhost:3000/dev/create-room", {
         name
