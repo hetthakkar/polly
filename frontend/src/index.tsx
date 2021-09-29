@@ -10,10 +10,8 @@ import PlayerPlays from './views/PlayerPlays';
 import PlayerResults from './views/PlayerResults'
 import Index from './views/Index';
 import AdminDashboard from './views/AdminDashboard';
-import { config } from 'dotenv';
 import axios from 'axios';
 
-config();
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem('AUTH_TOKEN');
