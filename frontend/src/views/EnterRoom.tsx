@@ -11,25 +11,23 @@ export default function EnterRoom() {
             <section className="relative pt-16 items-center flex h-screen max-h-860-px">
                 <div className="container mx-auto items-center flex flex-wrap">
                     <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
-                        <div className="flex flex-col justify-center items-center">
-                            <img src={require('../assets/img/logo.svg')} alt="" />
-                        <h1>
-                            
-                        </h1>
-                        </div>
 
                         <div className="flex flex-col justify-center items-center">
+                            <span className="flex flex-col justify-center items-center mb-2 items-center text-4xl font-medium place-content-center mb-12">Enter personal room</span>
+
                             <div className="row flex flex-col justify-center items-center">
                                 <br />
-                                <span className="w-full mb-2"><label className="text-3xl font-medium">User Name</label></span>
-                                <input id="host_name" type="text" onChange={(event) => {
-                                    setName(event.target.value);
-                                }} className="create-room-input get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"></input>
+                                <span className="w-full mb-1"><label className="text-3xl font-medium">User Name</label></span>
+                                <div className="container row flex flex-col justify-center items-center">
+                                    <input id="host_name" placeholder="Type your username" type="text" onChange={(event) => {
+                                        setName(event.target.value);
+                                    }} className="bg-gradient-to-l placeholder-current::placeholder border-r-0 border-t-0 border-l-0"></input>
+                                </div>
                             </div>
-                            <div className="row flex flex-col justify-center items-center">
+                            <div className="row flex flex-col justify-center items-center mt-4">
                                 <br />
-                                <label className="create-room-text flex flex-col justify-center items-center">Room Name</label>
-                                <input id="room_name" className="create-room-input get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"></input>
+                                <span className="w-full mb-1"><label className="w-full mb-2 text-3xl font-medium ">Room</label></span>
+                                <input id="room_name" placeholder="Type the room code" type="text" className="border-r-0 border-t-0 border-l-0 placeholder-current::placeholder"></input>
                             </div>
                             <div className="mt-12">
                                 <div
