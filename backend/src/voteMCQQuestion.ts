@@ -10,7 +10,7 @@ const prisma = new PrismaClient();
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
-  const { playerId, questionId, answerId } = event.body as any;
+  const { playerId, questionId, optionId } = event.body as any;
 
   const playerAnswer = await prisma.playerAnswer.create({
     data: {
@@ -18,7 +18,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
       pid: playerId,
       mcqQuestionPlayerAnswer: {
         create: {
-          answerId,
+          answerId: optionId,
         }
       }
     }
@@ -39,7 +39,7 @@ handler
   .use(validateEventSchema(Joi.object({
     playerId: Joi.string().required(),
     questionId: Joi.string().required(),
-    answerId: Joi.number().positive().required(),
+    optionId: Joi.number().positive().required(),
   })))
   .use(httpErrorHandler())
 

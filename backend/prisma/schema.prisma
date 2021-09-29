@@ -8,7 +8,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
-  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+  binaryTargets = ["rhel-openssl-1.0.x"]
 }
 
 model Player {
@@ -26,6 +26,7 @@ model Room {
   hostId     String
   host       Player       @relation(fields: [hostId], references: [id])
   key        String
+  title      String
   question   Question[]
   roomPlayer RoomPlayer[]
 }

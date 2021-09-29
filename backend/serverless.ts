@@ -1,5 +1,4 @@
 import type { AWS } from '@serverless/typescript';
-import { moveCursor } from 'readline';
 
 const cors = {
   origin: '*',
@@ -16,7 +15,8 @@ const serverlessConfiguration: AWS = {
   frameworkVersion: '2',
   plugins: [
     'serverless-plugin-typescript',
-    'serverless-offline'
+    'serverless-offline',
+    'serverless-jetpack'
   ],
   useDotenv: true,
   provider: {
@@ -106,11 +106,18 @@ const serverlessConfiguration: AWS = {
     }
   },
   package: {
+    // include: [
+    //   'node_modules/.prisma/*',
+    // ],
     patterns: [
-      '!node_modules/.prisma/client/libquery_engine-*',
-      'node_modules/.prisma/client/libquery_engine-rhel-*',
+      'node_modules/.prisma/client/query-engine-rhel-*'
     ]
   }
+  // package: {
+  //   patterns: [
+  //     '!node_modules/.prisma/client/query-engine-*',
+  //   ]
+  // }
 };
 
 module.exports = serverlessConfiguration;

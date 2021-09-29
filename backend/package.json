@@ -11,8 +11,7 @@
     "@prisma/client": "^3.0.2",
     "http-errors": "^1.8.0",
     "joi": "^17.4.2",
-    "jsonwebtoken": "^8.5.1",
-    "redis": "^3.1.2"
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.55.0",
@@ -23,8 +22,9 @@
     "@types/redis": "^2.8.32",
     "prisma": "^3.0.2",
     "serverless": "^2.59.0",
+    "serverless-jetpack": "^0.11.1",
     "serverless-offline": "^8.2.0",
-    "serverless-plugin-typescript": "1.1.7",
+    "serverless-plugin-typescript": "1.2.0",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },

@@ -14,12 +14,26 @@ const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
-  const { playerId, name } = event.body as any;
+  const { playerId, name, title } = event.body as any;
 
-  const player = await createOrFetchPlayer({playerId, name}, prisma);
+  console.log('Reached here');
+  
+  let player;
+  try {
+    player = await createOrFetchPlayer({playerId, name}, prisma);
+  } catch (error) {
+    console.log('Could not create/fetch player');
+    
+  }
+
+  console.log('Fetched player');
+  
 
   const key = generateRoomKey(); // Generate random room code
   const token = createToken(player.id); // Generate player auth token to be attached with every subsequent request
+
+  console.log('Creating room');
+  
 
   const room = await prisma.room.create({
     data: {
@@ -30,6 +44,8 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
       title
     }
   })
+
+  await prisma.$disconnect();
 
   return {
     statusCode: 200,
@@ -44,6 +60,7 @@ handler
   .use(httpJsonBodyParser())
   .use(checkAuth())
   .use(validateEventSchema(Joi.object({
+    playerId: Joi.string(),
     name: Joi.string().required(),
     title: Joi.string().required(),
   })))

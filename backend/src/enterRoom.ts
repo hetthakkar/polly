@@ -67,6 +67,7 @@ handler
   .use(httpJsonBodyParser())
   .use(checkAuth())
   .use(validateEventSchema(Joi.object({
+    playerId: Joi.string(),
     name: Joi.string().required(),
     roomKey: Joi.string().required(),
   })))
