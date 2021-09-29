@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1> Hello! Welcome to Polly Me! </h1>
+<h1> Hello! Welcome to Poll Me! </h1>
 
 <div align="center">
 
