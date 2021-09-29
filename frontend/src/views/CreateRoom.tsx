@@ -6,7 +6,7 @@ import createNewRoom from '../util/createNewRoom'
 import { RouteComponentProps } from 'react-router'
 
 export default function CreateRoom({ history }: RouteComponentProps) {
-  const { setHostId, name, setName, title, setTitle, setRoomId } = useContext(AppContext)
+  const { setHostId, name, setName, title, setTitle, setRoomId, setRoomKey } = useContext(AppContext)
   return (
     <>
       <section className='header relative pt-16 items-center flex h-screen max-h-860-px'>
@@ -48,6 +48,7 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                     setHostId(room.hostId);
                     setTitle(title);
                     setRoomId(room.id);
+                    setRoomKey(room.key);
                     localStorage.setItem('AUTH_TOKEN', token);
                     localStorage.setItem('roomId', room.id);
                     history.push('/admin-dashboard')

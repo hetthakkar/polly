@@ -1,5 +1,15 @@
 import { createContext, Dispatch, SetStateAction, useEffect, useState } from 'react'
 
+interface IQuestionData {
+  mcqQuestions: {
+    qid: string;
+    description: string;
+    options: {
+      id: number,
+      description: string;
+    }[]
+  }[]
+}
 interface IContext {
   hostId: string;
   setHostId: Dispatch<SetStateAction<string>>;
@@ -11,6 +21,8 @@ interface IContext {
   setRoomId: Dispatch<SetStateAction<string>>;
   roomKey: string;
   setRoomKey: Dispatch<SetStateAction<string>>;
+  questionData: IQuestionData;
+  setQuestionData: Dispatch<SetStateAction<IQuestionData>>;
 }
 
 // @ts-ignore
@@ -26,6 +38,7 @@ export default function App({ children }: Props) {
   const [title, setTitle] = useState('')
   const [roomId, setRoomId] = useState('')
   const [roomKey, setRoomKey] = useState('');
+  const [questionData, setQuestionData] = useState<IQuestionData>({mcqQuestions: []});
 
   useEffect(() => {
     const roomId = localStorage.getItem('roomId');
@@ -44,7 +57,9 @@ export default function App({ children }: Props) {
         roomId,
         setRoomId,
         roomKey,
-        setRoomKey
+        setRoomKey,
+        questionData,
+        setQuestionData,
       }}
     >
       {children}
