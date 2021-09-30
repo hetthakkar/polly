@@ -2,20 +2,20 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "mysql"
+  provider = "postgres"
   url      = env("DATABASE_URL")
 }
 
 generator client {
-  provider = "prisma-client-js"
-  binaryTargets = ["rhel-openssl-1.0.x"]
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 model Player {
-  id           String        @id @default(uuid())
+  id           String         @id @default(uuid())
   name         String
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @default(now()) @updatedAt
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @default(now()) @updatedAt
   room         Room[]
   roomPlayer   RoomPlayer[]
   playerAnswer PlayerAnswer[]
@@ -37,11 +37,11 @@ enum QuestionType {
 }
 
 model Question {
-  id           String        @id @default(uuid())
+  id           String         @id @default(uuid())
   roomId       String
-  room         Room          @relation(fields: [roomId], references: [id], onDelete: Cascade)
-  createdAt    DateTime      @default(now())
-  isPublished  Boolean       @default(false)
+  room         Room           @relation(fields: [roomId], references: [id])
+  createdAt    DateTime       @default(now())
+  isPublished  Boolean        @default(false)
   questionType QuestionType
   mcqQuestion  MCQQuestion?
   playerAnswer PlayerAnswer[]
@@ -49,18 +49,18 @@ model Question {
 
 model MCQQuestion {
   qid           String      @id
-  question      Question    @relation(fields: [qid], references: [id], onDelete: Cascade)
+  question      Question    @relation(fields: [qid], references: [id])
   description   String
   options       MCQOption[]
   correctAnswer Int?
 }
 
 model MCQOption {
-  id          Int      @id @default(autoincrement())
-  description String
-  questionId  String
-  createdAt   DateTime    @default(now())
-  mcqQuestion MCQQuestion @relation(fields: [questionId], references: [qid], onDelete: Cascade)
+  id                      Int                       @id @default(autoincrement())
+  description             String
+  questionId              String
+  createdAt               DateTime                  @default(now())
+  mcqQuestion             MCQQuestion               @relation(fields: [questionId], references: [qid])
   mCQQuestionPlayerAnswer MCQQuestionPlayerAnswer[]
 }
 
@@ -74,22 +74,22 @@ model RoomPlayer {
 }
 
 model PlayerAnswer {
-  pid      String
-  player   Player   @relation(fields: [pid], references: [id])
-  qid      String
-  question Question @relation(fields: [qid], references: [id])
+  pid                     String
+  player                  Player                   @relation(fields: [pid], references: [id])
+  qid                     String
+  question                Question                 @relation(fields: [qid], references: [id])
   mcqQuestionPlayerAnswer MCQQuestionPlayerAnswer?
 
   @@id([pid, qid])
 }
 
 model MCQQuestionPlayerAnswer {
-  pid String
-  qid String
-  playerAnswer PlayerAnswer @relation(fields: [pid, qid], references: [pid, qid], onDelete: Cascade)
-  answerId   Int      // ID of the option attempted
-  mcqOption  MCQOption  @relation(fields: [answerId], references: [id], onDelete: Cascade) 
+  pid          String
+  qid          String
+  playerAnswer PlayerAnswer @relation(fields: [pid, qid], references: [pid, qid])
+  answerId     Int // ID of the option attempted
+  mcqOption    MCQOption    @relation(fields: [answerId], references: [id])
+
 
   @@id([pid, qid])
-
 }
