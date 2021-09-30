@@ -19,7 +19,7 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          ALLOWED_ORIGIN: ${{ ALLOWED_ORIGIN }}
+          ALLOWED_ORIGIN: ${{ secrets.ALLOWED_ORIGIN }}
         working-directory: ./backend
       - name: serverless deploy
         run: serverless deploy --stage prod
@@ -28,6 +28,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          ALLOWED_ORIGIN: ${{ ALLOWED_ORIGIN }}
+          ALLOWED_ORIGIN: ${{ secrets.ALLOWED_ORIGIN }}
         working-directory: ./backend
         
