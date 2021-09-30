@@ -51,8 +51,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
   const questionData = await fetchRoomData(roomKey, true, prisma);
   const token = createToken(player.id);
 
-  console.log(questionData);
-
+  await prisma.$disconnect();
 
   return {
     body: JSON.stringify({

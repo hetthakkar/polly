@@ -7,6 +7,7 @@ import httpErrorHandler from '@middy/http-error-handler';
 import { validateEventSchema } from './utils/validateEventSchema';
 import Joi from 'joi';
 import { fetchAnalytics } from './utils/fetchAnalytics';
+import cors from '@middy/http-cors';
 const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -14,6 +15,8 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
   const { playerId, roomId } = event.body as any;
 
   const analytics = await fetchAnalytics(roomId, prisma);
+
+  await prisma.$disconnect();
 
   return {
     statusCode: 200,
@@ -31,5 +34,8 @@ handler
     roomId: Joi.string().required(),
   })))
   .use(httpErrorHandler())
+  .use(cors({
+    origin: process.env.ALLOWED_ORIGIN
+  }))
 
 module.exports.handler = handler

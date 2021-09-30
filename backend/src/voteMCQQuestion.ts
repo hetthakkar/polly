@@ -6,6 +6,8 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { checkAuth } from './utils/checkAuth';
 import { validateEventSchema } from './utils/validateEventSchema';
 import Joi from 'joi';
+import cors from '@middy/http-cors';
+
 const prisma = new PrismaClient();
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -22,8 +24,10 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
         }
       }
     }
-  })
+  });
 
+
+  await prisma.$disconnect();
 
   return {
     body: JSON.stringify({
@@ -42,5 +46,8 @@ handler
     optionId: Joi.number().positive().required(),
   })))
   .use(httpErrorHandler())
+  .use(cors({
+    origin: process.env.ALLOWED_ORIGIN
+  }))
 
 module.exports.handler = handler;

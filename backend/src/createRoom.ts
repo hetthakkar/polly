@@ -10,6 +10,7 @@ import { createOrFetchPlayer } from './utils/createOrFetchPlayer';
 import cors from '@middy/http-cors';
 import { validateEventSchema } from './utils/validateEventSchema';
 import Joi from 'joi';
+import createHttpError from 'http-errors';
 const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
@@ -22,8 +23,9 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
   try {
     player = await createOrFetchPlayer({playerId, name}, prisma);
   } catch (error) {
+    console.log(error);
     console.log('Could not create/fetch player');
-    
+    throw new createHttpError.InternalServerError('Unable to fetch player details');
   }
 
   console.log('Fetched player');

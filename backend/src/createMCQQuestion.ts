@@ -46,6 +46,8 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
       })
   })
 
+  await prisma.$disconnect();
+
   // TODO! Notify room players about question
 
   return {
