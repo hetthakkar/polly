@@ -92,6 +92,10 @@ functions:
               - Content-Type
               - AUTH_TOKEN
     name: backend-prod-fetchAnalytics
+# package:
+#   include:
+#     - "node_modules/.prisma/**"
 package:
-  include:
-    - "node_modules/.prisma/**"
+  patterns:
+    - '!node_modules/.prisma/client/libquery_engine-*'
+    - 'node_modules/.prisma/client/libquery_engine-rhel-*'
