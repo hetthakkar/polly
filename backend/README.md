@@ -1,19 +1,61 @@
-## Local development setup
+# Tools and frameworks
 
-- Create an .env file from the template `env.example`
-- Populate `env.example` with the appropriate key value pairs(NOTE: You'll have to have your database setup before this step)
-- Run the following commands to get started with local development
+Following is a list of tools used for the backend development and motivation("Why") of using them
+
+## Serverless framework
+
+The serverless framework is an open source platform agnostic tool that facilitates development and deployment of serverless applications. [See docs](https://www.serverless.com/framework/docs)
+
+The `serverless.yml` file in the backend root describes the configuration for each lambda function in our API. As a general rule, one lambda function is created per API endpoint. 
+
+The serverless framework has native support for community plugins which allow us to use custom bundlers(`serverless-jetpack` for our project), ('serverless-plugin-typescript' for typescript support)
+
+The [serverless framework dashboard]("https://app.serverless.com") allows for easy viewing of function invocations, logs, etc
+
+## Middy
+
+Middy is a lightweight library that adds support for middlewares to serverless lambda functions. Adding middlewares allows us to separate business logic from boilerplate validations, etc. It is also an implementation of the well-known design principle [Chain of Responsibility](https://refactoring.guru/design-patterns/chain-of-responsibility)
+
+## Database communication via Prisma ORM
+
+Prisma is an ORM(object relational mapper) that allows for quick database prototyping and clean communication with the database. A central config file(`prisma/schema.prisma`) is used to manage everything related to the database. It allows us to easily swap database provider and relieves us from performing repititive tasks like input sanitzation that add a lot of complexity.
+
+Prisma also supports Typescript out of the box and generates types for our schema that can be used anywhere in the code.
+
+When we generate a prisma client, it compiles a binary that uses a Rust runtime that enables memory safe and quick database access.
+## Event schema validation using [Joi](https://joi.dev/)
+
+A custom middleware `validateEventSchema` is created to clean up event validation and allow for direct and safe use of input variables 
+## File structure
+
+The handler functions for each lambda function are present in `src/*`. These handlers are designed to be thin wrappers around their core functions located in `src/utils/*`. Separation of business logic and boilerplate allows for easy testing and extension
+
+Following is the general struture an API handler follows
+
 ```
-npm i
-npx prisma db push
-npx prisma generate
-```
-- Finally to start your local API serverless instance, run
-```
-serverless offline
+// Import the required modules
+import { foo } from "bar";
+...
+
+// Initialize database connection outside handler to promote reuse between API calls
+const prisma = new PrismaClient();
+
+// Wrap the handler with middy() to allow for attaching middlewares
+const handler = middy((event) => {
+  // Parse parameters from event body
+  // Call core API function
+
+  // Return
+})
+
+handler
+  .use(middlewareA())
+  .use(middlewareB())
+  ...
+
 ```
 
-## Backend functionality via REST APIs
+# Backend functionality via REST APIs
 
 1. Create Room
 
