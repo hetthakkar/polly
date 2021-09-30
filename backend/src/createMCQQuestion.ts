@@ -9,43 +9,15 @@ import { verifyHost } from './utils/verifyHost';
 import Joi from 'joi';
 import { validateEventSchema } from './utils/validateEventSchema';
 import cors from '@middy/http-cors';
+import { createMcqQuestionCore } from './utils/createMcqQuestionCore';
 const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
-  const { playerId, roomId } = event.body as any;
+  const { playerId, roomId, title, options } = event.body as any;
 
-  if (!verifyHost(playerId, roomId, prisma)) {
-    throw new createHttpError.Forbidden('Not allowed');
-  }
-
-  const { title, options } = event.body as any;
-
-  console.log();
-
-
-  const question = await prisma.question.create({
-    data: {
-      roomId,
-      questionType: QuestionType.MCQ,
-      mcqQuestion: {
-        create: {
-          description: title,
-        }
-      }
-    }
-  })
-
-  const _options = await prisma.mCQOption.createMany({
-    data:
-      options.map((option: string) => {
-        return {
-          description: option,
-          questionId: question.id
-        }
-      })
-  })
-
+  const {question, options: _options} = await createMcqQuestionCore(playerId, roomId, title, options);
+  
   await prisma.$disconnect();
 
   // TODO! Notify room players about question

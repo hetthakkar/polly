@@ -16,6 +16,10 @@ export async function verifyHost(playerId: string, roomId: string, prisma = new 
     throw new createHttpError.BadRequest('Invalid roomId')
   }
 
-  return playerId === hostId;
+  if(playerId !== hostId) {
+    throw new createHttpError.Forbidden();
+  }
+
+  return true;
 
 }
