@@ -94,4 +94,4 @@ functions:
     name: backend-prod-fetchAnalytics
 package:
   include:
-    - node_modules/.prisma/**
+    - "node_modules/.prisma/**"
