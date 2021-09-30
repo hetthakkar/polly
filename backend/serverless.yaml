@@ -1,0 +1,97 @@
+org: hettest
+app: seproject
+service:
+  name: backend
+frameworkVersion: '2'
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-jetpack
+useDotenv: true
+provider:
+  stage: dev
+  region: us-east-1
+  name: aws
+  runtime: nodejs14.x
+  apiGateway:
+    minimumCompressionSize: 1024
+    shouldStartNameWithService: true
+  lambdaHashingVersion: '20201221'
+  versionFunctions: true
+functions:
+  connectionHandler:
+    handler: src/connection.handler
+    events:
+      - http:
+          path: /hello
+          method: GET
+          cors:
+            origin: ${env:ALLOWED_ORIGIN}
+            headers:
+              - Content-Type
+              - AUTH_TOKEN
+    name: backend-prod-connectionHandler
+  createRoom:
+    handler: src/createRoom.handler
+    events:
+      - http:
+          path: /create-room
+          method: POST
+          cors:
+            origin: ${env:ALLOWED_ORIGIN}
+            headers:
+              - Content-Type
+              - AUTH_TOKEN
+    name: backend-prod-createRoom
+  createMCQQuestion:
+    handler: src/createMCQQuestion.handler
+    events:
+      - http:
+          path: /create-mcq-question
+          method: POST
+          cors:
+            origin: ${env:ALLOWED_ORIGIN}
+            headers:
+              - Content-Type
+              - AUTH_TOKEN
+    name: backend-prod-createMCQQuestion
+  enterRoom:
+    handler: src/enterRoom.handler
+    events:
+      - http:
+          path: /enter-room
+          method: POST
+          cors:
+            origin: ${env:ALLOWED_ORIGIN}
+            headers:
+              - Content-Type
+              - AUTH_TOKEN
+    name: backend-prod-enterRoom
+  voteMCQQuestion:
+    handler: src/voteMCQQuestion.handler
+    events:
+      - http:
+          path: /vote-mcq
+          method: POST
+          cors:
+            origin: ${env:ALLOWED_ORIGIN}
+            headers:
+              - Content-Type
+              - AUTH_TOKEN
+    name: backend-prod-voteMCQQuestion
+  fetchAnalytics:
+    handler: src/fetchAnalytics.handler
+    events:
+      - http:
+          path: /fetch-analytics
+          method: POST
+          cors:
+            origin: ${env:ALLOWED_ORIGIN}
+            headers:
+              - Content-Type
+              - AUTH_TOKEN
+    name: backend-prod-fetchAnalytics
+package:
+  include:
+    - node_modules/.prisma/**
