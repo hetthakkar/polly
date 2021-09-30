@@ -23,3 +23,4 @@ jobs:
         working-directory: ./backend
       - name: test
         run: npm run test
+        working-directory: ./backend
