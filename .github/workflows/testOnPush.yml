@@ -24,3 +24,7 @@ jobs:
       - name: test
         run: npm run test
         working-directory: ./backend
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          ALLOWED_ORIGIN: ${{ secrets.ALLOWED_ORIGIN }}
