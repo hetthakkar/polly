@@ -14,7 +14,7 @@
 ![GitHub](https://img.shields.io/github/license/Hetthakkar/polly)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Hetthakkar/polly)
 ![Lines of code](https://img.shields.io/tokei/lines/github/Hetthakkar/polly)
-[![Test backend](https://github.com/hetthakkar/polly/actions/workflows/testOnPush.yml/badge.svg?branch=main)](https://github.com/hetthakkar/polly/actions/workflows/testOnPush.yml)
+[![build](https://github.com/hetthakkar/polly/actions/workflows/testOnPush.yml/badge.svg?branch=main)](https://github.com/hetthakkar/polly/actions/workflows/testOnPush.yml)
 
 
 </div>
