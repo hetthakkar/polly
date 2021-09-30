@@ -19,6 +19,11 @@ provider:
     shouldStartNameWithService: true
   lambdaHashingVersion: '20201221'
   versionFunctions: true
+  environment:
+    DATABASE_URL: ${env:DATABASE_URL}
+    JWT_SECRET: ${env:JWT_SECRET}
+    ALLOWED_ORIGIN: ${env:ALLOWED_ORIGIN}
+  
 functions:
   connectionHandler:
     handler: src/connection.handler
