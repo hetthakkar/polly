@@ -30,6 +30,7 @@ jobs:
           ALLOWED_ORIGIN: ${{ secrets.ALLOWED_ORIGIN }}
       - name: deploy
         run: node ./node_modules/serverless/bin/serverless.js deploy --stage prod
+        working-directory: ./backend
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
