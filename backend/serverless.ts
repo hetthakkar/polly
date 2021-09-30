@@ -14,6 +14,7 @@ const serverlessConfiguration: AWS = {
   service: 'backend',
   frameworkVersion: '2',
   plugins: [
+    'serverless-dotenv-plugin',
     'serverless-plugin-typescript',
     'serverless-offline',
     'serverless-jetpack'
@@ -106,16 +107,16 @@ const serverlessConfiguration: AWS = {
     }
   },
   package: {
-    // include: [
-    //   'node_modules/.prisma/*',
-    // ],
-    patterns: [
-      'node_modules/.prisma/client/query-engine-rhel-*'
-    ]
+    include: [
+      'node_modules/.prisma/**',
+    ],
+    // patterns: [
+    //   '!node_modules/.prisma/client/query-engine-*',
+    //   'node_modules/.prisma/client/query-engine-rhel-*'
+    // ]
   }
   // package: {
   //   patterns: [
-  //     '!node_modules/.prisma/client/query-engine-*',
   //   ]
   // }
 };
