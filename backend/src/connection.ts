@@ -22,7 +22,10 @@ let handler = middy(async (
       setPlayerConnectionId(playerId, connectionId!, client);
       break;
     case '$disconnect':
-      // unsetPl
+      // unsetPlayer socket data
+    case '$default':
+      console.log('Default socket event triggered');
+      
   }
 
 
