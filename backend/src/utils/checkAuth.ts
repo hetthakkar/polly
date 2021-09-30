@@ -10,7 +10,12 @@ interface checkAuthInput {
 export function checkAuth(input: checkAuthInput = {blockExecution: false}): MiddlewareObj {
   return {
     before: (handler) => {
-      const token = handler.event.headers['AUTH_TOKEN'];
+      const token = handler.event.headers['auth_token'];
+
+      console.log('Value of the token is', token);
+      console.log('Value of headers is', handler.event.headers);
+      
+      
 
       if (!token && input.blockExecution) {
         throw new createHttpError.Forbidden('Missing token');
