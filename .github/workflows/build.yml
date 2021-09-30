@@ -23,6 +23,7 @@ jobs:
         working-directory: ./backend
       - name: Apply pending migrations to db
         run: npx prisma migrate deploy
+        working-directory: ./backend
       - name: Generate prisma client
         run: npx prisma generate
         working-directory: ./backend
