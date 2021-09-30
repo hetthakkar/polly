@@ -15,7 +15,7 @@ jobs:
         run: npm i
         working-directory: ./backend
       - name: Generate prisma client
-        run: npx generate
+        run: npx prisma generate
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
