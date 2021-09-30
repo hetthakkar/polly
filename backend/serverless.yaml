@@ -7,7 +7,7 @@ plugins:
   - serverless-dotenv-plugin
   - serverless-plugin-typescript
   - serverless-offline
-  # - serverless-jetpack
+  - serverless-jetpack
 useDotenv: true
 provider:
   stage: dev
@@ -92,10 +92,10 @@ functions:
               - Content-Type
               - AUTH_TOKEN
     name: backend-prod-fetchAnalytics
-# package:
-#   include:
-#     - "node_modules/.prisma/**"
 package:
-  patterns:
-    - '!node_modules/.prisma/client/libquery_engine-*'
-    - 'node_modules/.prisma/client/libquery_engine-rhel-*'
+  include:
+    - "node_modules/.prisma/**"
+# package:
+#   patterns:
+#     - '!node_modules/.prisma/client/libquery_engine-*'
+#     - 'node_modules/.prisma/client/libquery_engine-rhel-*'
