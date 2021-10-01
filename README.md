@@ -21,8 +21,8 @@
 </div>
 
 <h1> 📹 Project Video </h1>
-  
-https://user-images.githubusercontent.com/89552657/135091392-ab34da70-89fe-4673-bf68-32c206751b59.mp4
+
+https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-b486-bb60f83340ec.mp4
 
 <h1> 💎 What is Poll Me about? </h1>
 
