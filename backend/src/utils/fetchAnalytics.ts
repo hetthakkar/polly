@@ -23,6 +23,33 @@ export async function fetchAnalytics(roomId: string, prisma = new PrismaClient()
     }
   });
 
-  return mcqQuestionData;
+  const res: any = {};
+
+  for(let questionId of mcqQuestionIds) {
+    const options = await prisma.mCQOption.findMany({
+      where: {
+        questionId,
+      }
+    })
+
+    const optionsWithCount = options.map((option) => {
+
+      const optionCount = mcqQuestionData.filter((_mcqQuestionData) => _mcqQuestionData.answerId === option.id && _mcqQuestionData.qid === questionId) 
+
+      return {
+        id: option.id,
+        description: option.description,
+        count: (optionCount && optionCount.length) ? optionCount[0]._count['answerId'] : 0,
+      }
+    })
+
+    res[questionId] = optionsWithCount;
+    
+  }
+  console.log(res);
+    
+  // const mcqQuestionOptions = awiat prisma.
+
+  return res;
 
 }

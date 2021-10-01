@@ -23,6 +23,7 @@ export async function fetchRoomData(roomKey: string, onlyFetchPublished: boolean
     throw new createHttpError.BadRequest('Invalid room key');
   }
 
+
   const mcqQuestionQueryResult = await prisma.question.findMany({
     where: {
       roomId,

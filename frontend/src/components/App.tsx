@@ -10,7 +10,7 @@ interface IQuestionData {
     }[]
   }[]
 }
-interface IContext {
+export interface IContext {
   hostId: string;
   setHostId: Dispatch<SetStateAction<string>>;
   name: string;
@@ -23,6 +23,8 @@ interface IContext {
   setRoomKey: Dispatch<SetStateAction<string>>;
   questionData: IQuestionData;
   setQuestionData: Dispatch<SetStateAction<IQuestionData>>;
+  isLoading: boolean;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 
 // @ts-ignore
@@ -39,6 +41,7 @@ export default function App({ children }: Props) {
   const [roomId, setRoomId] = useState('')
   const [roomKey, setRoomKey] = useState('');
   const [questionData, setQuestionData] = useState<IQuestionData>({mcqQuestions: []});
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const roomId = localStorage.getItem('roomId');
@@ -60,6 +63,8 @@ export default function App({ children }: Props) {
         setRoomKey,
         questionData,
         setQuestionData,
+        isLoading,
+        setIsLoading
       }}
     >
       {children}

@@ -8,7 +8,10 @@ import { voteMcq } from '../util/voteMcq'
 
 export default function PlayerPlays() {
   const [name, setName] = useState('')
-  const { questionData } = useContext(AppContext)
+  const [selectedOptions, setSelectedOptions] = useState<{
+    [key: string]: number
+  }>({})
+  const { questionData, isLoading, setIsLoading } = useContext(AppContext)
 
   //   const [, updateState] = useState({});
   //   const forceUpdate = useCallback(() => updateState({}), []);
@@ -26,9 +29,28 @@ export default function PlayerPlays() {
           <PlayerQuestion
             key={mcqQuestion.qid}
             question={mcqQuestion}
+            isLoading={isLoading}
+            selectedOptionId={selectedOptions[mcqQuestion.qid]}
             onOptionSelected={async (questionId: string, optionId: number) => {
-              console.log('User clicked ', questionId, optionId)
-              await voteMcq({ questionId, optionId })
+              if (selectedOptions[questionId]) {
+                return
+              }
+              let t: { [key: string]: number } = {}
+              t[questionId] = optionId
+              console.log({ questionId: optionId })
+
+              setIsLoading(true)
+              try {
+                await voteMcq({ questionId, optionId })
+                setSelectedOptions({
+                  ...selectedOptions,
+                  ...t,
+                })
+              } catch (error) {
+                console.log(error)
+              } finally {
+                setIsLoading(false)
+              }
             }}
           />
         )
@@ -43,10 +65,17 @@ export default function PlayerPlays() {
         <div className='container mx-auto items-center flex flex-wrap'>
           <div className='w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4'>
             <div className='flex flex-col justify-center items-center'>
-              <div className='font-semibold text-4xl text-blueGray-600'>
+              <div className='font-semibold text-4xl text-blueGray-600 text-center mb-6'>
                 Answer the Questions!
               </div>
               {playerQuestions}
+              {isLoading ? (
+                <span className='mt-5'>
+                  <div className='loader'>Loading...</div>
+                </span>
+              ) : (
+                <span></span>
+              )}
             </div>
           </div>
         </div>

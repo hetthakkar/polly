@@ -7,18 +7,19 @@ interface Props {
       id: number;
     }[];
   };
-  
+  selectedOptionId?: number;
   onOptionSelected: (qid: string, optionId: number) => void;
+  isLoading: boolean;
 }
 
-export default function PlayerQuestion({ question, onOptionSelected }: Props) {
+export default function PlayerQuestion({ question, onOptionSelected, selectedOptionId, isLoading }: Props) {
   return <div className="flex flex-col" style={{ width: '80vw' }}>
     <div className="font-medium text-xl text-center">
       {question.description}
     </div>
     <div className="flex flex-col bg-blue-500 mt-3 font-bold">
       {(question.options).map((option) => (
-        <div className="bg-blue-600 w-48 mt-2 p-2 rounded-lg text-white" style={{ background: '#4299E1' }}
+        <div className={`w-48 mt-2 p-2 rounded-lg text-white ${selectedOptionId ? 'cursor-pointer' : ''}`} style={{ background: option.id === selectedOptionId ? '#255780' : '#4299E1' }}
           onClick={() => { onOptionSelected(question.qid, option.id) }}>
           {option.description}
         </div>

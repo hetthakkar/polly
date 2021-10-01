@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Index() {
   return (
     <>
-      <section className='header relative items-center flex h-screen'>
-        <div className='container mx-auto items-center flex flex-wrap'>
-          <div className='w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4'>
+          <div className='w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4 text-center'>
             <div className='flex flex-col justify-center items-center'>
               {/* <div className="pt-32 sm:pt-0"> */}
               <div className='font-semibold text-4xl text-blueGray-600 mt-20'>
@@ -50,14 +48,12 @@ export default function Index() {
               /> */}
             </div>
           </div>
-        </div>
 
         {/* <img
           className='absolute top-0 b-auto right-0 sm:w-6/12 sm:mt-0 w-1/5 max-h-860px'
           src={require('assets/img/pattern_react.png').default}
           alt='...'
         /> */}
-      </section>
     </>
   )
 }
