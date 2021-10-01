@@ -15,7 +15,7 @@ export default function CreateRoom({ history }: RouteComponentProps) {
         <div className='container mx-auto items-center flex flex-wrap'>
           <div className='w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4'>
             <div className='w-2/3 row flex flex-col justify-center items-center'>
-              <span className='font-semibold flex flex-col justify-center items-center mb-2 items-center text-4xl font-medium place-content-center mb-12'>
+              <span className='font-semibold flex flex-col justify-center items-center mb-2 text-center text-4xl font-medium place-content-center mb-12'>
                 Create a personal room
               </span>
               <div className='row flex flex-col justify-center items-center'>
@@ -85,12 +85,12 @@ export default function CreateRoom({ history }: RouteComponentProps) {
             </div>
           </div>
         </div>
-        {/* 
+        
         <img
           className='absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px'
           src={require('assets/img/pattern_react.png').default}
           alt='...'
-        /> */}
+        />
       </section>
     </>
   )

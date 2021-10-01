@@ -28,11 +28,6 @@ let handler = middy(async (
       
   }
 
-
-  console.log("Here", body);
-  console.log("connectionId", connectionId, "routeKey", routeKey);
-  
-
   return {
     statusCode: 200,
     body: 'Hello',

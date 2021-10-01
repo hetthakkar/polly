@@ -86,7 +86,7 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
               <span className='font-semibold flex flex-col justify-center items-center mb-2 items-center text-4xl font-medium place-content-center -mt-24'>
                 Hello {name},
               </span>
-              <span className='font-semibold flex flex-col justify-center items-center items-center text-4xl font-medium place-content-center '>
+              <span className='font-semibold flex flex-col justify-center items-center text-center text-4xl font-medium place-content-center '>
                 Welcome to your personal room
               </span>
 
