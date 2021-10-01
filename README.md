@@ -110,17 +110,24 @@ Performing database changes(Refer [prisma docs](https://www.prisma.io/docs/))
 <h1> ✅ Things that have been done in Phase 1 </h1>
 
 * Designing the Wireframe
-* Creation of Architecture and UML Diagram
-* Coding up Backend in AWS
-* Coding up Frontend
-* Coding API
-* Creation of Relational Tables
+* Basic architecture design and implementation
+* Backend API implemented using serverless framework
+* Front end mobile UI implemented using React
+* Database design and schema implementation using Prisma
+
+Live preview available at https://gracious-swirles-4a8c61.netlify.app
 
 <h1> Future scope </h1>
+
+A list of future tasks are described in the issues section of this repository
 
 <h2> A note on scalability </h2>
 
 All the architecture decisions in this project have been motivated with scalability in mind. Hence, we chose `serverless` for our backend and a Jamstack compatible framework(`React`) for our front end. Even though these are highly scalable and robust, there are certain parts of the application that could cause bottlenecks at scale
+
+*Database connections*: , Each serverless function instance that runs requires it's own database connection. This can cause issues at scale as database connections are often quite limited. Following are certain remedies
+  - Each serverless function would push their intent into a queue when counting votes. A seperate consumer lambda could then aggregate these votes and count them together
+  - Another solution could be to use database connection pools to manage and preserve connections
 
 
 
