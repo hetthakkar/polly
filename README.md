@@ -28,6 +28,17 @@ https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-
 
 Poll Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. Want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Poll Me is the right place for you. This app enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
 
+<h1> Demo </h1>
+
+![Enter](https://user-images.githubusercontent.com/89552657/135620636-c65c6b52-4e61-4f94-b935-4a5d8f882341.png)
+
+![Personal room](https://user-images.githubusercontent.com/89552657/135620722-eed2a0c9-ac6f-4c46-9253-148e2d84210d.png)
+
+![Create question](https://user-images.githubusercontent.com/89552657/135620671-c092e9f8-1974-44ea-94d1-60926e8dca5e.png)
+
+![Answer question](https://user-images.githubusercontent.com/89552657/135620754-1be6baf6-c2bb-4680-9fa0-50ae16f37da9.png)
+
+
 <h1> 📐 Architecture </h1>
 
 <img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/Architecture.png" width="600"/>
