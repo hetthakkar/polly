@@ -1,7 +1,7 @@
 | Notes|Self Assessment|evidence| 
 |-----|---------|---------|
-|workload is spread over the whole team (one team member is often Xtimes more productive than the others... 
- but nevertheless, here is a track record that everyone is contributing a lot)|3| evidence  in GH|
+|workload is spread over the whole team (one team member is often Xtimes more productive than the others... | 3| 
+ but nevertheless, here is a track record that everyone is contributing a lot)| 3| evidence  in GH|
 | Number of commits|3| evidence in GH|
 | Number of commits: by different people| 3| evidence in GH|
 | Issues reports: there are **many**| 2| evidence in GH|
