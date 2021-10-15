@@ -1,0 +1,11 @@
+version: '3'
+services:
+ backend:
+  build: ./backend
+  ports:
+   - "3000:3000"   
+
+
+networks:
+ default:
+  name: polly_hunt
