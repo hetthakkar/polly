@@ -1,5 +1,8 @@
 org: hettest
 app: seproject
+custom:
+  serverless-offline:
+    host: 0.0.0.0
 service:
   name: backend
 frameworkVersion: '2'
