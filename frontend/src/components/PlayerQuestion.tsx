@@ -19,8 +19,8 @@ export default function PlayerQuestion({ question, onOptionSelected, selectedOpt
     </div>
     <div className="flex flex-col bg-blue-500 mt-3 font-bold">
       {(question.options).map((option) => (
-        <div className={`w-48 mt-2 p-2 rounded-lg text-white ${selectedOptionId ? 'cursor-pointer' : ''}`} style={{ background: option.id === selectedOptionId ? '#255780' : '#4299E1' }}
-          onClick={() => { onOptionSelected(question.qid, option.id) }}>
+        <div className={`w-48 mt-2 p-2 rounded-lg text-white ${selectedOptionId ? 'cursor-pointer' : ''}`} style={{ background: option.id === selectedOptionId ? '#000000' : '#0d6efd' }}
+        onClick={() => { onOptionSelected(question.qid, option.id) }}>
           {option.description}
         </div>
       ))}
