@@ -17,7 +17,8 @@
     "chart.js": "^3.0.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
-    "postcss": "8.2.8",
+    "loader-runner": "^4.2.0",
+    "postcss": "^8.3.11",
     "react": "17.0.1",
     "react-chartjs-2": "^3.0.5",
     "react-dom": "17.0.1",
@@ -28,7 +29,7 @@
     "tailwindcss": "2.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

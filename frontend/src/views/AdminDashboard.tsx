@@ -31,6 +31,7 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
       const data = await fetchRoomAnalytics({ roomId });
       console.log(data);
       // setAnalytics(data.analytics)
+      setInterval(async ()=> await fetchRoomAnalytics({roomId}),5000);
     })();
   });
 
