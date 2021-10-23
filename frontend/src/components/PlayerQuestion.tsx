@@ -14,6 +14,7 @@ interface Props {
 
 export default function PlayerQuestion({ question, onOptionSelected, selectedOptionId, isLoading }: Props) {
   return <div className="flex flex-col" style={{ width: '80vw' }}>
+    <br></br>
     <div className="font-medium text-xl text-center">
       {question.description}
     </div>
