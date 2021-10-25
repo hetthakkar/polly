@@ -15,7 +15,7 @@ interface IAnalytics {
 }
 
 export default function AdminDashboard({ history }: RouteComponentProps) {
-  const { hostId, setHostId, name, setName, title, setTitle, roomId, roomKey, setRoomId} =
+  const { hostId, setHostId, name, setName, title, setTitle, roomId, roomKey, setRoomId } =
     useContext(AppContext)
 
   const [analytics, setAnalytics] = useState<IAnalytics>();
@@ -23,7 +23,7 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
   useEffect(() => {
     (async function () {
       const _roomId = localStorage.getItem('roomId');
-      if(_roomId) {
+      if (_roomId) {
         setRoomId(_roomId);
       }
       const playerName = localStorage.getItem('playerName');
@@ -31,19 +31,19 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
       const data = await fetchRoomAnalytics({ roomId });
       console.log(data);
       // setAnalytics(data.analytics)
-      setInterval(async ()=> await fetchRoomAnalytics({roomId}),5000);
+      setInterval(async () => await fetchRoomAnalytics({ roomId }), 5000);
     })();
   });
 
   const barCharts = analytics ? Object.values(analytics).map((options) => {
-    const mapped = options.map((option) => {  
+    const mapped = options.map((option) => {
       return {
         text: option.description,
         value: option.count,
       }
-    }) 
+    })
     console.log(mapped.map((c) => c.text), mapped.map((c) => c.value));
-    
+
     return <div>
       <Bar
         data={{
@@ -73,94 +73,107 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
         }}
       />
     </div>
-  }): <></>;
+  }) : <></>;
 
   console.log(barCharts);
-  
+
 
   return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container px-5">
-                    <a className="navbar-brand" href="/">PollMe</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#contactus">Contact</a></li>
-                        </ul>
-                    </div>
+
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container px-5">
+          <a className="navbar-brand" href="/">PollMe</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
+              <li className="nav-item"><a className="nav-link" href="#contactus">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <section className="py-5 border-bottom" id="features">
+        <div className="container px-5 my-5">
+          <div className="row gx-5">
+
+            <div className="col-lg-6">
+              <div className="card2 card border-0 px-4 py-5">
+                <div className="row mb-4 px-3">
+                  <h2 className="mb-0 mr-4 mt-2">Click on the button below to add another question to your room</h2>
                 </div>
-    </nav>
+                <div className="row px-3 mb-4">
+                  <div className="line"></div>
+                </div>
+                <div className="row px-3">
+                  <div
+                    className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
+                    onClick={() => {
+                      history.push('/create-questions');
+                    }}
+                  >
+                    Create a question!
+                  </div>
+                </div>
 
+                <div className="row px-3 mb-4">
+                  <div className="line"></div>
+                </div>
+                <div className="row mb-4 px-3">
+                  <h2 className="mb-0 mr-4 mt-2">Share your personal room</h2>
+                </div>
+                <div className="row mb-4 px-3">
+                  <div className="flex flex-row mt-2">
+                    <div className='p-2 text-lg ' style={{ background: '#DFDEED' }}>{process.env.REACT_APP_FRONT_END_BASE_URL + '/enter-room?code=' + roomKey}</div>
+                    <div className="ml-3 cursor-pointer border-2 text-gray-400 flex flex-col items-center justify-center items-center" onClick={() => {
+                      navigator.clipboard.writeText(process.env.REACT_APP_FRONT_END_BASE_URL + '/enter-room?code=' + roomKey);
+                    }} >  <div>Copy</div>  </div>
+                  </div>
+                </div>
 
-    <section className="py-5 border-bottom" id="features">
-            <div className="container px-5 my-5">
-                <div className="row gx-5">
-
-                    <div className="col-lg-6">
-                 <div className="card2 card border-0 px-4 py-5">
-                    <div className="row mb-4 px-3">
-                        <h2 className="mb-0 mr-4 mt-2">Click on the button below to add another question to your room</h2>
-                    </div>
-                    <div className="row px-3 mb-4">
-                        <div className="line"></div>
-                    </div>
-                    <div className="row px-3">
-                      <div
-                        className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
-                        onClick={() => {
-                                    history.push('/create-questions');
-                                  }}
-                      >
-                        Create a question!
-                      </div>
-                    </div>
-
-                    <div className="row px-3 mb-4">
-                        <div className="line"></div>
-                    </div>
-                    <div className="row mb-4 px-3">
-                     <h2 className="mb-0 mr-4 mt-2">Share your personal room</h2>
-                    </div>
-                    <div className="row mb-4 px-3">
-                        <div className="flex flex-row mt-2">
-                            <div className='p-2 text-lg ' style={{background: '#DFDEED'}}>{process.env.REACT_APP_FRONT_END_BASE_URL + '/enter-room?code=' + roomKey}</div>
-                            <div className="ml-3 cursor-pointer border-2 text-gray-400 flex flex-col items-center justify-center items-center" onClick={() => {
-                              navigator.clipboard.writeText(process.env.REACT_APP_FRONT_END_BASE_URL + '/enter-room?code=' + roomKey);
-                            }} >  <div>Copy</div>  </div>
-                        </div>
-                    </div>
-
-                 {/*
+                {/*
                   <div className="row mb-3 px-3"> <button type="submit" className="btn btn-blue text-center">Login</button> </div>
-                 */}  
+                 */}
 
-                    <div className="row px-3 mb-4">
-                        <div className="line"></div>
-                    </div>
-                    <div className='row mb-3 px-3'>
-                        <div
-                            className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
-                            onClick={async () => {
-                                                    const data = await fetchRoomAnalytics({ roomId });
-                                                    console.log(data);
-                                                    setAnalytics(data.analytics)
+                <div className="row px-3 mb-4">
+                  <div className="line"></div>
+                </div>
+                <div className='row mb-3 px-3'>
+                  <div
+                    className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
+                    onClick={async () => {
+                      const data = await fetchRoomAnalytics({ roomId });
+                      console.log(data);
+                      setAnalytics(data.analytics)
 
-                                                  }}
-                        >
-                        Refresh
-                        </div>
-                    </div>
-
+                    }}
+                  >
+                    Refresh
+                  </div>
                 </div>
 
- 
               </div>
             </div>
+
+
+            <div className="col-lg-6">
+              <div className="card2 card border-0 px-4 py-5">
+                <h2 className="mb-0 mr-4 mt-2">Analytics</h2>
+                <div className="row px-3 justify-content-left mt-4 mb-5 border-line">  </div>
+                <div className="row">
+                  {barCharts}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
+
+
+
     </>
   )
 }
