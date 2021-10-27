@@ -66,6 +66,8 @@ The following technologies were used for the development of this project:
     Description: User can create a room for conducting the polls:
 
 
+<img src="https://github.com/shahrk/polly/blob/main/images/create_room.png" width="1000"/>
+
 <h1> 📐 Architecture </h1>
 
 <img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/Architecture.png" width="600"/>
