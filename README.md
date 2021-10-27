@@ -53,13 +53,17 @@ The following technologies were used for the development of this project:
 
 <h1> 🚅 Demo </h1>
 
-<img src="https://github.com/hetthakkar/polly/blob/main/images/Enter.png" width="400"/>
+1. The **Home** Page 🎯
 
-<img src="https://github.com/hetthakkar/polly/blob/main/images/Personal%20room.png" width="400"/>
+    Description: It is the home page for our webapp, It contains the "create room" icon and other information:
 
-<img src="https://github.com/hetthakkar/polly/blob/main/images/Create%20question.png" width="400"/>
 
-<img src="https://github.com/hetthakkar/polly/blob/main/images/Answer%20question.png" width="400"/>
+<img src="https://github.com/shahrk/polly/blob/main/images/home_page.png" width="1000"/>
+
+
+2. The **Create Room** Page 🎯
+
+    Description: User can create a room for conducting the polls:
 
 
 <h1> 📐 Architecture </h1>
