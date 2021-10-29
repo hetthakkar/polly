@@ -10,7 +10,7 @@
 |1|Docs: what: point descriptions of each class/function (in isolation)  |https://github.com/shahrk/polly/blob/main/backend/README.md |
 |.5|Number of commits: by different people  |https://github.com/shahrk/polly/graphs/contributors |
 |1|issues are being closed | https://github.com/shahrk/polly/issues|
-|.5|issues are discussed before they are closed | even if you discuss in slack, need a sumamry statement here|
+|.5|issues are discussed before they are closed | Discussed on Whatsapp, Evidence in Github Issue comments.|
 |.5|Use of syntax checkers. | config files iin GH showing this checker's config|
 |1|Issues reports: there are many  | |
 |.5|Use of code formatters. | config files in GH showing your this formatter's config|
