@@ -5,5 +5,7 @@ RUN npm install
 COPY . ./
 EXPOSE 3000
 EXPOSE 3002
+RUN apt-get update
+RUN apt-get install -y openssl
 RUN npx prisma generate
 CMD ["npx", "serverless", "offline"]
