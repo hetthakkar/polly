@@ -7,22 +7,19 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) 
 </div>
 
-![GitHub top language](https://img.shields.io/github/languages/top/Hetthakkar/polly)
-![GitHub contributors](https://img.shields.io/github/contributors/Hetthakkar/polly)
-![GitHub language count](https://img.shields.io/github/languages/count/Hetthakkar/polly)
-![GitHub](https://img.shields.io/github/license/Hetthakkar/polly)
-![GitHub last commit](https://img.shields.io/github/last-commit/Hetthakkar/polly)
-![Lines of code](https://img.shields.io/tokei/lines/github/Hetthakkar/polly)
+![GitHub top language](https://img.shields.io/github/languages/top/shahrk/polly)
+![GitHub contributors](https://img.shields.io/github/contributors/shahrk/polly)
+![GitHub language count](https://img.shields.io/github/languages/count/shahrk/polly)
+![GitHub](https://img.shields.io/github/license/shahrk/polly)
+![GitHub last commit](https://img.shields.io/github/last-commit/shahrk/polly)
 [![build](https://github.com/hetthakkar/polly/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/hetthakkar/polly/actions/workflows/build.yml)
 [![DOI](https://zenodo.org/badge/403373361.svg)](https://zenodo.org/badge/latestdoi/403373361)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
 [![Coverage Status](https://img.shields.io/badge/coverage-91%25-brightgreen)](https://coveralls.io/github/shahrk/polly?branch=main)
+![lines of code](https://tokei.rs/b1/github/shahrk/polly?color=ff69b4&label=Lines%20of%20Code&style=flat-square)
+[![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities-0-brightgreen)](https://app.snyk.io/org/shahrk/project/4e0a290f-50af-4ab4-9941-c3a7f4d8bea6)
     
 </div>
-
-<h1> 📹 Project Video </h1>
-
-https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-b486-bb60f83340ec.mp4
 
 <h1> 💎 What is Poll Me about? </h1>
 
@@ -53,20 +50,23 @@ The following technologies were used for the development of this project:
 
 <h1> 🚅 Demo </h1>
 
-1. The **Home** Page 🎯
-
-    Description: It is the home page for our webapp, It contains the "create room" icon and other information:
+https://user-images.githubusercontent.com/26930183/140460676-173f22a9-cfab-4c44-a7f7-76cb9ce4184e.mp4
 
 
-<img src="https://github.com/shahrk/polly/blob/main/images/home_page.png" width="1000"/>
+1. The **Home** Page 🎯 :It is the home page for our webapp, It contains the "create room" icon and other functional information.
+
+2. **Create Room** Button 🎯 : Users can create a room for conducting their polls. The room link is shown so you can share it with your audience/customers.
+
+3. **Survey** Questions 🎯: User can submit any kind of questions for conducting polls along with the choices for the answer. 
+    
+4. **Analytics** 🎯: After the audience submit the answers, Analytical insights into the results are shown on the page.  
 
 
-2. The **Create Room** Page 🎯
+<h1> 📹 Project Video </h1>
 
-    Description: User can create a room for conducting the polls:
+https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-b486-bb60f83340ec.mp4
 
 
-<img src="https://github.com/shahrk/polly/blob/main/images/create_room.png" width="1000"/>
 
 <h1> 📐 Architecture </h1>
 

@@ -3,6 +3,7 @@ import { AppContext } from '../components/App'
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import '../assets/styles/createRoom.css'
 import createNewRoomCallback from '../util/createNewRoom'
+import {fetchQuestionData} from '../util/fetchQuestionData'
 import PlayerQuestion from '../components/PlayerQuestion'
 import { voteMcq } from '../util/voteMcq'
 
@@ -11,14 +12,18 @@ export default function PlayerPlays() {
   const [selectedOptions, setSelectedOptions] = useState<{
     [key: string]: number
   }>({})
-  const { questionData, isLoading, setIsLoading } = useContext(AppContext)
+  const { questionData, isLoading, setIsLoading, roomKey, setQuestionData} = useContext(AppContext)
 
   //   const [, updateState] = useState({});
   //   const forceUpdate = useCallback(() => updateState({}), []);
-
-  //   useEffect(() => {
-  //       setTimeout(() => forceUpdate(), 1000);
-  //   })
+    const refreshQuestionData = async () => {
+      const data = await fetchQuestionData({roomKey})
+      console.log(data)
+      setQuestionData(data.questionData)
+    }
+    useEffect(() => {
+        setInterval(async () => await refreshQuestionData(), 5000);
+    },[])
 
   const playerQuestions =
     questionData &&
@@ -61,31 +66,64 @@ export default function PlayerPlays() {
 
   return (
     <>
-      <section className='header relative pt-16 items-center flex h-screen max-h-860-px'>
-        <div className='container mx-auto items-center flex flex-wrap'>
-          <div className='w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4'>
-            <div className='flex flex-col justify-center items-center'>
-              <div className='font-semibold text-4xl text-blueGray-600 text-center mb-6'>
-                Answer the Questions!
-              </div>
-              {playerQuestions}
-              {isLoading ? (
-                <span className='mt-5'>
-                  <div className='loader'>Loading...</div>
-                </span>
-              ) : (
-                <span></span>
-              )}
-            </div>
-          </div>
-        </div>
 
-        <img
-          className='absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px'
-          src={require('assets/img/pattern_react.png').default}
-          alt='...'
-        />
-      </section>
+
+
+
+
+<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div className="container px-5">
+                    <a className="navbar-brand" href="/">PollMe</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#contactus">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+    </nav>
+
+
+    <section className="py-5 border-bottom" id="features">
+            <div className="container px-5 my-5">
+                <div className="row gx-5">
+               
+                <div className="col-lg-6">
+                    <div className="card2 card border-0 px-4 py-5">
+                        <div className="row mb-4 px-3">
+                        {playerQuestions}
+                        {isLoading ? (
+        <span className='mt-5'>
+          <div className='loader'>Loading...</div>
+        </span>
+      ) : (
+        <span></span>
+      )}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="col-lg-6">
+                        <div className="card2 card border-0 px-4 py-5">
+                            <div className="row">
+                            <img
+                              src={require('assets/img/pattern_react.png').default}
+                              alt='...'
+                            />  </div>
+                            <div className="row px-3 justify-content-center mt-4 mb-5 border-line"> </div>
+                        </div>
+                </div>
+
+                
+                </div>
+            </div>
+    </section>
+
+
+
+
     </>
   )
 }
