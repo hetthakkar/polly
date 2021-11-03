@@ -140,9 +140,7 @@ All the architecture decisions in this project have been motivated with scalabil
   - Each serverless function would push their intent into a queue when counting votes. A seperate consumer lambda could then aggregate these votes and count them together
   - Another solution could be to use database connection pools to manage and preserve connections
 
-
-
-<h1> 📬 Team Members </h1>
+<h1> 📬 Team Members (Part 1) </h1>
 
 Het Thakkar
 
@@ -153,3 +151,15 @@ Lorenz Scheller
 Neelkanth Tripathi 
 
 Divyank Gupta 
+
+<h1> 📬 Team Members (Part 2) </h1>
+
+Raj Shah  
+
+Nirav Patel  
+
+Bhargav Jethwa  
+
+Mithil Dave  
+
+Parth Kanakiya
