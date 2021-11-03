@@ -15,7 +15,7 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/Hetthakkar/polly)
 [![build](https://github.com/hetthakkar/polly/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/hetthakkar/polly/actions/workflows/build.yml)
 [![DOI](https://zenodo.org/badge/403373361.svg)](https://zenodo.org/badge/latestdoi/403373361)
-
+[![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
 
 
 </div>
