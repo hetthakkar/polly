@@ -17,7 +17,7 @@
 |.5|Use of style checkers | https://github.com/shahrk/polly/blob/main/frontend/package.json, https://github.com/shahrk/polly/blob/main/backend/.eslintrc.json|
 |.5|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. |In Readme |
 |.5|test cases exist  | https://github.com/shahrk/polly/tree/main/backend/__tests__|
-|.5|Use of code coverage  |https://github.com/shahrk/polly/blob/main/.coveralls.yml|
+|.5|Use of code coverage  | https://github.com/shahrk/polly/tree/main/backend/coverage |
 |.5|other automated analysis tools  | In Readme: BuildPass, check for code lines, vulnerability|
 |.5|test cases:.a large proportion of the issues related to handling failing cases. | https://github.com/shahrk/polly/issues?q=is%3Aissue+is%3Aclosed+label%3Aenhancement, https://github.com/shahrk/polly/issues?q=is%3Aissue+is%3Aclosed+label%3Abug|
 |.5|test cases are routinely executed | https://github.com/shahrk/polly/blob/main/.github/workflows/build.yml|
