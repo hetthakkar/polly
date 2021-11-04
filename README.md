@@ -8,6 +8,7 @@
 </div>
 
 ![GitHub top language](https://img.shields.io/github/languages/top/Hetthakkar/polly)
+
 ![GitHub contributors](https://img.shields.io/github/contributors/Hetthakkar/polly)
 ![GitHub language count](https://img.shields.io/github/languages/count/Hetthakkar/polly)
 ![GitHub](https://img.shields.io/github/license/Hetthakkar/polly)
@@ -27,6 +28,29 @@ https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-
 <h1> 💎 What is Poll Me about? </h1>
 
 Poll Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. Want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Poll Me is the right place for you. This app enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
+
+The following technologies were used for the development of this project:  
+
+<p align="left">
+  <a href="https://www.reactjs.org" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="react" width="30" height="30"/>
+  </a>
+  <a href="https://www.typescriptlang.org/" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" alt="ts" width="30" height="30"/>
+  </a> 
+  <a href="https://www.redis.io" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redis/redis.png" alt="redis" width="30" height="30"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg" alt="js" width="30" height="30"/>
+  </a>
+  <a href="https://aws.amazon.com/" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/github/explore/fbceb94436312b6dacde68d122a5b9c7d11f9524/topics/aws/aws.png" alt="aws" width="30" height="30"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain.svg" alt="css" width="30" height="30"/>
+  </a>
+</p>  
 
 <h1> 🚅 Demo </h1>
 
