@@ -22,7 +22,7 @@ export default function PlayerPlays() {
       setQuestionData(data.questionData)
     }
     useEffect(() => {
-        setInterval(() => refreshQuestionData(), 1000);
+        setInterval(async () => await refreshQuestionData(), 5000);
     },[])
 
   const playerQuestions =

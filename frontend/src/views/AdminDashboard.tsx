@@ -15,7 +15,7 @@ interface IAnalytics {
 }
 
 export default function AdminDashboard({ history }: RouteComponentProps) {
-  const { hostId, setHostId, name, setName, title, setTitle, roomId, roomKey, setRoomId} =
+  const { hostId, setHostId, name, setName, title, setTitle, roomId, roomKey, setRoomId, setRoomKey} =
     useContext(AppContext)
 
   const [analytics, setAnalytics] = useState<IAnalytics>();
@@ -23,15 +23,16 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
   useEffect(() => {
     (async function () {
       const _roomId = localStorage.getItem('roomId');
-      if(_roomId) {
-        setRoomId(_roomId);
-      }
+      const _roomKey = localStorage.getItem('roomKey');
+      _roomId && setRoomId(_roomId);
+      _roomKey && setRoomKey(_roomKey);
       const playerName = localStorage.getItem('playerName');
       playerName && setName(playerName);
       const data = await fetchRoomAnalytics({ roomId });
       // console.log(data);
       setAnalytics(data.analytics)
       setInterval(async ()=> {
+
         const data = await fetchRoomAnalytics({roomId})
         setAnalytics(data.analytics)},
         5000);
