@@ -1,7 +1,7 @@
 FROM node:14
+COPY package.json /usr/src/app/package.json
 WORKDIR /usr/src/app
-COPY package*.json ./
 RUN npm install
-COPY . .
 EXPOSE 3001
-RUN npm run start
+COPY . ./
+CMD npm run start
