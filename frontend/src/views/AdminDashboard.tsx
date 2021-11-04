@@ -29,11 +29,14 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
       const playerName = localStorage.getItem('playerName');
       playerName && setName(playerName);
       const data = await fetchRoomAnalytics({ roomId });
-      console.log(data);
-      // setAnalytics(data.analytics)
-      setInterval(async ()=> await fetchRoomAnalytics({roomId}),5000);
+      // console.log(data);
+      setAnalytics(data.analytics)
+      setInterval(async ()=> {
+        const data = await fetchRoomAnalytics({roomId})
+        setAnalytics(data.analytics)},
+        5000);
     })();
-  });
+  },[]);
 
   const barCharts = analytics ? Object.values(analytics).map((options) => {
     const mapped = options.map((option) => {  
