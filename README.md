@@ -8,7 +8,6 @@
 </div>
 
 ![GitHub top language](https://img.shields.io/github/languages/top/Hetthakkar/polly)
-
 ![GitHub contributors](https://img.shields.io/github/contributors/Hetthakkar/polly)
 ![GitHub language count](https://img.shields.io/github/languages/count/Hetthakkar/polly)
 ![GitHub](https://img.shields.io/github/license/Hetthakkar/polly)
@@ -17,7 +16,7 @@
 [![build](https://github.com/hetthakkar/polly/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/hetthakkar/polly/actions/workflows/build.yml)
 [![DOI](https://zenodo.org/badge/403373361.svg)](https://zenodo.org/badge/latestdoi/403373361)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
-[![Coverage Status](https://coveralls.io/repos/github/shahrk/polly/badge.svg?branch=main)](https://coveralls.io/github/shahrk/polly?branch=main)
+[![Coverage Status](https://img.shields.io/badge/coverage-91%25-brightgreen)](https://coveralls.io/github/shahrk/polly?branch=main)
     
 </div>
 
