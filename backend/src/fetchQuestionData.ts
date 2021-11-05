@@ -15,7 +15,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
   const {roomKey } = event.body as any;
   
   const questionData = await fetchRoomData(roomKey, false, prisma);
-  console.log(questionData)
+  // console.log(questionData)
   await prisma.$disconnect();
 
   return {
