@@ -7,11 +7,11 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) 
 </div>
 
-![GitHub top language](https://img.shields.io/github/languages/top/Hetthakkar/polly)
-![GitHub contributors](https://img.shields.io/github/contributors/Hetthakkar/polly)
-![GitHub language count](https://img.shields.io/github/languages/count/Hetthakkar/polly)
-![GitHub](https://img.shields.io/github/license/Hetthakkar/polly)
-![GitHub last commit](https://img.shields.io/github/last-commit/Hetthakkar/polly)
+![GitHub top language](https://img.shields.io/github/languages/top/shahrk/polly)
+![GitHub contributors](https://img.shields.io/github/contributors/shahrk/polly)
+![GitHub language count](https://img.shields.io/github/languages/count/shahrk/polly)
+![GitHub](https://img.shields.io/github/license/shahrk/polly)
+![GitHub last commit](https://img.shields.io/github/last-commit/shahrk/polly)
 [![build](https://github.com/hetthakkar/polly/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/hetthakkar/polly/actions/workflows/build.yml)
 [![DOI](https://zenodo.org/badge/403373361.svg)](https://zenodo.org/badge/latestdoi/403373361)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
