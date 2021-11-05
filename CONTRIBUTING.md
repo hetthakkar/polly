@@ -74,3 +74,8 @@ i) Ensure that there is atleast an issue created for the code you are pushing.
 ii) Raise a new Issue on the Github if the issue doesn't exist.
 ii) Start working on the code for the same.
 iii) List the issues fixes in the PR description. Following is an example :- https://github.com/shahrk/polly/pull/28
+
+
+### Frontend coding standards
+
+We extensively follow the following for frontend code :- http://www.w3big.com/bootstrap/bootstrap-css-codeguide-html.html
