@@ -14,9 +14,9 @@ const prisma = new PrismaClient()
 
 const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
-  const { playerId, roomId, title, options, correctAnswer } = event.body as any;
+  const { playerId, roomId, title, options } = event.body as any;
 
-  const {question, options: _options} = await createMcqQuestionCore(playerId, roomId, title, options, correctAnswer);
+  const {question, options: _options} = await createMcqQuestionCore(playerId, roomId, title, options);
   
   await prisma.$disconnect();
 
@@ -39,7 +39,6 @@ handler
       playerId: Joi.string().required(),
       roomId: Joi.string().required(),
       title: Joi.string().required(),
-      correctAnswer: Joi.number().required(),
       options: Joi.array().items(
         Joi.string().required()
       ).length(4).required(),

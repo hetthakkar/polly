@@ -35,7 +35,6 @@ export async function fetchRoomData(roomKey: string, onlyFetchPublished: boolean
         select: {
           qid: true,
           description: true,
-          correctAnswer: true,
           options: {
             select: {
               id: true,

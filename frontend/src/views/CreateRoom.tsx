@@ -103,7 +103,6 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                             localStorage.setItem('AUTH_TOKEN', token)
                             localStorage.setItem('roomId', room.id)
                             localStorage.setItem('playerName', name);
-                            localStorage.setItem('roomKey', room.key);
                             setIsLoading(false);
                             history.push('/admin-dashboard')
                           } catch (error) {

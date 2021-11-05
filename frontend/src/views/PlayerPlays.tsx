@@ -3,7 +3,6 @@ import { AppContext } from '../components/App'
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import '../assets/styles/createRoom.css'
 import createNewRoomCallback from '../util/createNewRoom'
-import {fetchQuestionData} from '../util/fetchQuestionData'
 import PlayerQuestion from '../components/PlayerQuestion'
 import { voteMcq } from '../util/voteMcq'
 
@@ -12,18 +11,14 @@ export default function PlayerPlays() {
   const [selectedOptions, setSelectedOptions] = useState<{
     [key: string]: number
   }>({})
-  const { questionData, isLoading, setIsLoading, roomKey, setQuestionData} = useContext(AppContext)
+  const { questionData, isLoading, setIsLoading } = useContext(AppContext)
 
   //   const [, updateState] = useState({});
   //   const forceUpdate = useCallback(() => updateState({}), []);
-    const refreshQuestionData = async () => {
-      const data = await fetchQuestionData({roomKey})
-      console.log(data)
-      setQuestionData(data.questionData)
-    }
-    useEffect(() => {
-        setInterval(async () => await refreshQuestionData(), 5000);
-    },[])
+
+  //   useEffect(() => {
+  //       setTimeout(() => forceUpdate(), 1000);
+  //   })
 
   const playerQuestions =
     questionData &&
