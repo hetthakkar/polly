@@ -54,11 +54,11 @@ https://user-images.githubusercontent.com/26930183/140460676-173f22a9-cfab-4c44-
 
 1. The **Home** Page 🎯 :It is the home page for our webapp, It contains the "create room" icon and other functional information.
 
-2. The **Create Room** Page 🎯 : Users can create a room for conducting their polls. The room link is shown so you can share it with your audience/customers.
+2. **Create Room** Button 🎯 : Users can create a room for conducting their polls. The room link is shown so you can share it with your audience/customers.
 
-3. The **Survey** Questions 🎯: User can submit any kind of questions for conducting polls along with the choices for the answer. 
+3. **Survey** Questions 🎯: User can submit any kind of questions for conducting polls along with the choices for the answer. 
     
-4. The **Analytics** 🎯: After the audience submit the answers, Analytical insights into the results are shown on the page.  
+4. **Analytics** 🎯: After the audience submit the answers, Analytical insights into the results are shown on the page.  
 
 
 <h1> 📹 Project Video </h1>
