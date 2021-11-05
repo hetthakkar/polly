@@ -20,6 +20,10 @@
     
 </div>
 
+The **Full working of the webpage** 🎯
+
+https://user-images.githubusercontent.com/26930183/140460676-173f22a9-cfab-4c44-a7f7-76cb9ce4184e.mp4
+
 <h1> 📹 Project Video </h1>
 
 https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-b486-bb60f83340ec.mp4
@@ -65,8 +69,10 @@ The following technologies were used for the development of this project:
 
     Description: User can create a room for conducting the polls:
 
-
 <img src="https://github.com/shahrk/polly/blob/main/images/create_room.png" width="1000"/>
+
+
+
 
 <h1> 📐 Architecture </h1>
 
