@@ -8,8 +8,8 @@
 |.5|evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people) |Use of Docker in Github |
 |.5|evidence that the members of the team are working across multiple places in the code base |https://github.com/shahrk/polly/graphs/contributors |
 |1|Docs: what: point descriptions of each class/function (in isolation)  |https://github.com/shahrk/polly/blob/main/backend/README.md |
-|.5|Number of commits: by different people  | |
-|1|issues are being closed | evidence in GH|
+|.5|Number of commits: by different people  |https://github.com/shahrk/polly/graphs/contributors |
+|1|issues are being closed | https://github.com/shahrk/polly/issues|
 |.5|issues are discussed before they are closed | even if you discuss in slack, need a sumamry statement here|
 |.5|Use of syntax checkers. | config files iin GH showing this checker's config|
 |1|Issues reports: there are many  | |
