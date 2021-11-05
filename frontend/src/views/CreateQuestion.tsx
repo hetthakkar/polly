@@ -18,102 +18,133 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
 
   return (
     <>
-      <section className='header relative pt-16 items-center flex h-screen max-h-860-px'>
-        <div className='container mx-auto items-center flex flex-wrap'>
-          <div className='w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4'>
-            <div className='flex flex-col items-center'>
-              <div className='w-3/3 row flex flex-col justify-center items-center'>
-                <div className='font-semibold text-4xl text-blueGray-600 mt-16'>
-                  Create Your Question
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div className="container px-5">
+                    <a className="navbar-brand" href="/">PollMe</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#contactus">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div className='flex flex-col justify-center items-center'>
-                  <div className='row flex flex-col justify-center items-center'>
-                    <label className='w-full mb-1 text-2xl font-medium mt-6'>
-                      Title
-                    </label>
-                    <input
-                      type='text'
-                      style={{ backgroundColor: '#4299E1' }}
-                      className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-400'
-                      placeholder='Type your question..'
-                      onChange={(event) => {
-                        setTitle(event.target.value)
-                      }}
-                    />
-                  </div>
-                  <div className='row flex flex-col justify-center items-center'>
-                    <br />
-                    <label className='flex flex-col justify-center items-center w-full mr-4 text-2xl font-medium mt-6'>
-                      Possible answers
-                    </label>
-                    <input
-                      type='text'
-                      className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-400 mt-2'
-                      placeholder='a) Define an answer..'
-                      style={{ backgroundColor: '#4299E1' }}
-                      onChange={(e) => setOptionIndex(e.target.value, 0)}
-                    />
-                    <input
-                      type='text'
-                      className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-400 mt-2'
-                      placeholder='b) Define an answer..'
-                      style={{ backgroundColor: '#4299E1' }}
-                      onChange={(e) => setOptionIndex(e.target.value, 1)}
-                    />
-                    <input
-                      type='text'
-                      className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-400 mt-2'
-                      placeholder='c) Define an answer..'
-                      style={{ backgroundColor: '#4299E1' }}
-                      onChange={(e) => setOptionIndex(e.target.value, 2)}
-                    />
-                    <input
-                      type='text'
-                      className='rounded-lg text-white placeholder-white::placeholder bg-lightBlue-400 mt-2'
-                      placeholder='d) Define an answer..'
-                      style={{ backgroundColor: '#4299E1' }}
-                      onChange={(e) => setOptionIndex(e.target.value, 3)}
-                    />
-                  </div>
-                  <div className='row flex flex-col justify-center items-center'>
-                    <br />
-                  </div>
-                  <div className='mt-8'>
+    </nav>
+
+
+    <section className="py-5 border-bottom" id="features">
+            <div className="container px-5 my-5">
+                <div className="row gx-5">
+               
+                    <div className="col-lg-6">
+                 <div className="card2 card border-0 px-4 py-5">
+                    <div className="row mb-4 px-3">
+                        <h3 className="mb-0 mr-4 mt-2">Create Your Question</h3>
+                    </div>
+                    <div className="row px-3 mb-4">
+                        <div className="line"></div>
+                    </div>
+                    <div className="row px-3">
+                       <label className="mb-1"><h4 className="mb-0 text-sm">Question Title</h4></label>
+                        <input
+                              type='text'
+                              className='mb-4'
+                              placeholder='Type your question..'
+                              onChange={(event) => {
+                                setTitle(event.target.value)
+                              }}
+                        />
+                    </div>
+                
+                    <div className="row px-3"> 
+                    <label className="mb-1"><h4 className="mb-0 text-sm">Possible Options</h4> </label> 
+
+            <input
+              type='text'
+              className='mb-4'
+                            placeholder='a) Define an answer..'
+              onChange={(e) => setOptionIndex(e.target.value, 0)}
+            />
+            <input
+              type='text'
+              className='mb-4'
+                            placeholder='b) Define an answer..'
+              onChange={(e) => setOptionIndex(e.target.value, 1)}
+            />
+            <input
+              type='text'
+              className='mb-4'
+              placeholder='c) Define an answer..'
+              onChange={(e) => setOptionIndex(e.target.value, 2)}
+            />
+            <input
+              type='text'
+              className='mb-4'
+              placeholder='d) Define an answer..'
+              onChange={(e) => setOptionIndex(e.target.value, 3)}
+            /> 
+
+
+                    </div>
+
+                 {/*
+                  <div className="row mb-3 px-3"> <button type="submit" className="btn btn-blue text-center">Login</button> </div>
+                 */}  
+
+                    <div className='row mb-3 px-3'>
+
                     {isLoading ? (
-                      <div className='loader'>Loading...</div>
-                    ) : (
-                      <div
-                        className='get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-12 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150'
-                        onClick={async () => {
-                          setIsLoading(true);
-                          try {
-                            const res = await createMcqQuestion({
-                              title,
-                              options,
-                              roomId,
-                            })
-                            console.log(res)
-                            setIsLoading(false);
-                            history.push('/admin-dashboard') 
-                          } catch (error) {
-                            console.log(error);
-                            
-                          }
+              <div className='loader'>Loading...</div>
+            ) : (
+              <div
+              className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"              onClick={async () => {
+                  setIsLoading(true);
+                  try {
+                    const res = await createMcqQuestion({
+                      title,
+                      options,
+                      roomId,
+                    })
+                    console.log(res)
+                    setIsLoading(false);
+                    history.push('/admin-dashboard') 
+                  } catch (error) {
+                    console.log(error);
+                    
+                  }
 
-                          setIsLoading(false);
+                  setIsLoading(false);
 
-                        }}
-                      >
-                        Publish
-                      </div>
-                    )}
-                  </div>
-                </div>
+                }}
+              >
+                Publish
               </div>
+            )}
+                    </div>
+                
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+
+
+            <div className="col-lg-6">
+                    <div className="card2 card border-0 px-4 py-5">
+                        <div className="row">
+                        <img
+    
+    src={require('assets/img/pattern_react.png').default}
+    alt='...'
+  />  </div>
+                        <div className="row px-3 justify-content-center mt-4 mb-5 border-line"> </div>
+                    </div>
+                </div>
+
+                
+                </div>
+            </div>
+    </section>
+
+
+
     </>
   )
 }
