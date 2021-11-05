@@ -4,7 +4,6 @@ interface ICreateMCQQuestion {
   title: string;
   options: string[];
   roomId: string;
-  correctAnswer: number;
 }
 export async function createMcqQuestion(params: ICreateMCQQuestion) {
 

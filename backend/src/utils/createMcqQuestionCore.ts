@@ -2,7 +2,7 @@ import { PrismaClient, QuestionType } from '@prisma/client';
 import createHttpError from 'http-errors';
 import { verifyHost } from './verifyHost';
 
-export async function createMcqQuestionCore(playerId: string, roomId: string, title: string, options: string[], correctAnswer:number, prisma = new PrismaClient()) {
+export async function createMcqQuestionCore(playerId: string, roomId: string, title: string, options: string[], prisma = new PrismaClient()) {
   if (!(await verifyHost(playerId, roomId, prisma))) {
     throw new createHttpError.Forbidden('Not allowed');
   }
@@ -14,7 +14,6 @@ export async function createMcqQuestionCore(playerId: string, roomId: string, ti
       mcqQuestion: {
         create: {
           description: title,
-          correctAnswer: correctAnswer,
         }
       }
     }

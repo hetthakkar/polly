@@ -4,7 +4,6 @@ interface IQuestionData {
   mcqQuestions: {
     qid: string;
     description: string;
-    correctAnswer: number;
     options: {
       id: number,
       description: string;

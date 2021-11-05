@@ -7,13 +7,8 @@ import '../assets/styles/loader.css'
 
 export default function CreateQuestion({ history }: RouteComponentProps) {
   const [title, setTitle] = useState('')
-  const [correctAnswer, setCorrect] = useState(0)
   const [options, setOptions] = useState(['', '', '', ''])
   const { roomId, isLoading, setIsLoading } = useContext(AppContext)
-
-  function setCorrectAnswer(index: number){
-    setCorrect(index)
-  }
 
   function setOptionIndex(optionValue: string, index: number) {
     let _options = options
@@ -88,36 +83,7 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
               placeholder='d) Define an answer..'
               onChange={(e) => setOptionIndex(e.target.value, 3)}
             /> 
-            <span> 
-              a)&nbsp;
-              <input
-              type ='radio'
-              checked
-              name='same'
-              onClick={()=>setCorrectAnswer(0)}
-              />&nbsp;
-              
-              b)&nbsp;
-              <input
-              type ='radio'
-              name='same'
-              onClick={()=>setCorrectAnswer(1)}
-              />&nbsp;
-              
-              c)&nbsp;
-              <input
-              type ='radio'
-              name='same'
-              onClick={()=>setCorrectAnswer(2)}
-              />&nbsp;
-              
-              d)&nbsp;
-              <input
-              type ='radio'
-              name='same'
-              onClick={()=>setCorrectAnswer(3)}
-              />
-            </span>
+
 
                     </div>
 
@@ -138,7 +104,6 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
                       title,
                       options,
                       roomId,
-                      correctAnswer,
                     })
                     console.log(res)
                     setIsLoading(false);

@@ -17,6 +17,7 @@
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
 [![Coverage Status](https://img.shields.io/badge/coverage-91%25-brightgreen)](https://coveralls.io/github/shahrk/polly?branch=main)
 ![lines of code](https://tokei.rs/b1/github/shahrk/polly?color=ff69b4&label=Lines%20of%20Code&style=flat-square)
+    
 </div>
 
 <h1> 📹 Project Video </h1>
@@ -25,7 +26,30 @@ https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-
 
 <h1> 💎 What is Poll Me about? </h1>
 
-Poll Me is an app open for all and developed as part of the CSC 510 Software Engineering Project 1. Want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Poll Me is the right place for you. This app enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
+Poll Me is a super tool for getting feedback using online polls to let you check in with your audience or customers at any time. Do you want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Poll Me is the right place for you. With Poll Me, you can create instant polls, check on the live user feedbacks and gain access to our vibrant Analytics dashboard to get insight into your poll results. Poll Me enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
+
+The following technologies were used for the development of this project:  
+
+<p align="left">
+  <a href="https://www.reactjs.org" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="react" width="30" height="30"/>
+  </a>
+  <a href="https://www.typescriptlang.org/" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" alt="ts" width="30" height="30"/>
+  </a> 
+  <a href="https://www.redis.io" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redis/redis.png" alt="redis" width="30" height="30"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg" alt="js" width="30" height="30"/>
+  </a>
+  <a href="https://aws.amazon.com/" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/github/explore/fbceb94436312b6dacde68d122a5b9c7d11f9524/topics/aws/aws.png" alt="aws" width="30" height="30"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain.svg" alt="css" width="30" height="30"/>
+  </a>
+</p>  
 
 <h1> 🚅 Demo </h1>
 
@@ -133,21 +157,25 @@ Performing database changes(Refer [prisma docs](https://www.prisma.io/docs/))
 
 Live preview available at https://gracious-swirles-4a8c61.netlify.app
 
+<h1> ✅ Things that have been done in Phase 2 </h1>
+
+* Improving the UI
+* Making the UI progressive
+* Dockerization
+
 <h1> Future scope </h1>
 
 A list of future tasks are described in the issues section of this repository
 
 <h2> A note on scalability </h2>
 
-All the architecture decisions in this project have been motivated with scalability in mind. Hence, we chose `serverless` for our backend and a Jamstack compatible framework(`React`) for our front end. Even though these are highly scalable and robust, there are certain parts of the application that could cause bottlenecks at scale
+All the architectural decisions in this project have been made with scalability in mind. Hence, we chose `serverless` for our backend and a Jamstack compatible framework (`React`) for our front end. Even though these are highly scalable and robust, there are certain parts of the application that could cause bottlenecks at scale
 
 *Database connections*: , Each serverless function instance that runs requires it's own database connection. This can cause issues at scale as database connections are often quite limited. Following are certain remedies
   - Each serverless function would push their intent into a queue when counting votes. A seperate consumer lambda could then aggregate these votes and count them together
   - Another solution could be to use database connection pools to manage and preserve connections
 
-
-
-<h1> 📬 Team Members </h1>
+<h1> 📬 Team Members (Part 1) </h1>
 
 Het Thakkar
 
@@ -158,3 +186,18 @@ Lorenz Scheller
 Neelkanth Tripathi 
 
 Divyank Gupta 
+
+<h1> 📬 Team Members (Part 2) </h1>
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/shahrk/"><img src="https://avatars.githubusercontent.com/u/11090612?v=4" width="100px;" alt=""/><br /><sub><b>Raj Shah</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Nirav1929/"><img src="https://avatars.githubusercontent.com/u/11133468?v=4" width="100px;" alt=""/><br /><sub><b>Nirav Patel</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Parth59/"><img src="https://avatars.githubusercontent.com/u/22288099?v=4" width="100px;" alt=""/><br /><sub><b>Parth Kanakiya</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/mithildave/"><img src="https://avatars.githubusercontent.com/u/26930183?v=4" width="100px;" alt=""/><br /><sub><b>Mithil Dave</b></sub></a><br /></td>
+    <td align="center"><a href="https://www.github.com/BhargavJethwa"><img src="https://avatars.githubusercontent.com/u/70560970?v=4" width="100px;" alt=""/><br /><sub><b>Bhargav Jethwa</b></sub></a><br /></td>
+  </tr>
+</table>
+
+
+Contact us at: featurehuntteam@gmail.com
