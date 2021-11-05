@@ -20,14 +20,6 @@
     
 </div>
 
-The **Full working of the webpage** 🎯
-
-https://user-images.githubusercontent.com/26930183/140460676-173f22a9-cfab-4c44-a7f7-76cb9ce4184e.mp4
-
-<h1> 📹 Project Video </h1>
-
-https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-b486-bb60f83340ec.mp4
-
 <h1> 💎 What is Poll Me about? </h1>
 
 Poll Me is a super tool for getting feedback using online polls to let you check in with your audience or customers at any time. Do you want to get the opinion of many people on a certain matter, but haven't found a device that supports a large number of users yet? Then Poll Me is the right place for you. With Poll Me, you can create instant polls, check on the live user feedbacks and gain access to our vibrant Analytics dashboard to get insight into your poll results. Poll Me enables the creation of robust polls that support the use of a large number of users. Each host can create their own virtual room where they can publish their questions and share them with a large number of people. With pre-built survey templates, different survey types can be created and the results can be viewed by both host and player after answering the question. 
@@ -57,20 +49,21 @@ The following technologies were used for the development of this project:
 
 <h1> 🚅 Demo </h1>
 
-1. The **Home** Page 🎯
-
-    Description: It is the home page for our webapp, It contains the "create room" icon and other information:
+https://user-images.githubusercontent.com/26930183/140460676-173f22a9-cfab-4c44-a7f7-76cb9ce4184e.mp4
 
 
-<img src="https://github.com/shahrk/polly/blob/main/images/home_page.png" width="1000"/>
+1. The **Home** Page 🎯 :It is the home page for our webapp, It contains the "create room" icon and other functional information.
+
+2. The **Create Room** Page 🎯 : Users can create a room for conducting their polls. The room link is shown so you can share it with your audience/customers.
+
+3. The **Survey** Questions 🎯: User can submit any kind of questions for conducting polls along with the choices for the answer. 
+    
+4. The **Analytics** 🎯: After the audience submit the answers, Analytical insights into the results are shown on the page.  
 
 
-2. The **Create Room** Page 🎯
+<h1> 📹 Project Video </h1>
 
-    Description: User can create a room for conducting the polls:
-
-<img src="https://github.com/shahrk/polly/blob/main/images/create_room.png" width="1000"/>
-
+https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-b486-bb60f83340ec.mp4
 
 
 
