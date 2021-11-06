@@ -1,9 +1,5 @@
 org: hettest
 app: seproject
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 custom:
   serverless-offline:
     host: 0.0.0.0
