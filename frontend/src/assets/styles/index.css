@@ -637,7 +637,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -4996,7 +4996,6 @@ textarea.form-control-lg {
   background-color: #d1e7dd;
   border-color: #badbcc;
 }
-
 .alert-success .alert-link {
   color: #0c4128;
 }
@@ -7498,8 +7497,11 @@ textarea.form-control-lg {
   padding-left: 1rem !important;
 }
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> main
 .px-4 {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;

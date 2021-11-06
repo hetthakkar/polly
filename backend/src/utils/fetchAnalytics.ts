@@ -46,7 +46,7 @@ export async function fetchAnalytics(roomId: string, prisma = new PrismaClient()
     res[questionId] = optionsWithCount;
     
   }
-  console.log(res);
+  // console.log(res);
     
   // const mcqQuestionOptions = awiat prisma.
 
