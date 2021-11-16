@@ -62,9 +62,14 @@ https://user-images.githubusercontent.com/26930183/140460676-173f22a9-cfab-4c44-
 4. **Analytics** 🎯: After the audience submit the answers, Analytical insights into the results are shown on the page.  
 
 
-<h1> 📹 Project Video </h1>
+<h1> 📹 Project Video P1 </h1>
 
 https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-b486-bb60f83340ec.mp4
+
+<h1> 📹 Project Video P2 </h1>
+
+
+https://user-images.githubusercontent.com/26930183/142039379-9dd1fece-f0f4-45e4-a287-ce389ec05583.mp4
 
 
 
@@ -72,7 +77,7 @@ https://user-images.githubusercontent.com/42487202/135560302-1599ac5a-050d-48e1-
 
 <img src="https://github.com/hetthakkar/polly/blob/lorenz_branch/images/Architecture.png" width="600"/>
 
-<h1>Deployment details</h1>
+<h1>Deployment details P1 </h1>
 
 <h2>Backend</h2>
 
@@ -146,6 +151,16 @@ Performing database changes(Refer [prisma docs](https://www.prisma.io/docs/))
 - Start local serverless API 
  
       npm run start
+      
+
+<h1>Deployment details P2 </h1>
+
+By using docker we could deploy the whole system in one single command : 
+
+    “Docker compose up”
+
+The above single command set up the whole environment and downloads the dependencies to make it run seamlessly on any platform.
+
 
 <h1> ✅ Things that have been done in Phase 1 </h1>
 
@@ -159,35 +174,25 @@ Live preview available at https://gracious-swirles-4a8c61.netlify.app
 
 <h1> ✅ Things that have been done in Phase 2 </h1>
 
-* Improving the UI
-* Making the UI progressive
+* Improvment of the UI
+* Architechture Enhancement using Bootstrap
 * Dockerization
+* Centralized Database
+* Dynamic Loading of the Poll questions 
+
+You can check https://github.com/shahrk/polly/blob/main/docs/Enhancement.pdf for enhancement details in P2.  
 
 <h1> Future scope </h1>
 
-A list of future tasks are described in the issues section of this repository
+1. There can be few ready-to-use templates for conducting polls such as Event/Trivia/Business etc.
+2. The App can provide contacts of audiences on the homepage for the admins to sent polls to.
+3. The pool of audience can be devided into different categories such as students, bikers, science enthusiasts, group of believers etc. Then the admin can select categoris which they want to send their questions for polling. 
+4. Analytics can be extended to see the responses in different geograpic locations. 
 
-<h2> A note on scalability </h2>
 
-All the architectural decisions in this project have been made with scalability in mind. Hence, we chose `serverless` for our backend and a Jamstack compatible framework (`React`) for our front end. Even though these are highly scalable and robust, there are certain parts of the application that could cause bottlenecks at scale
 
-*Database connections*: , Each serverless function instance that runs requires it's own database connection. This can cause issues at scale as database connections are often quite limited. Following are certain remedies
-  - Each serverless function would push their intent into a queue when counting votes. A seperate consumer lambda could then aggregate these votes and count them together
-  - Another solution could be to use database connection pools to manage and preserve connections
 
-<h1> 📬 Team Members (Part 1) </h1>
-
-Het Thakkar
-
-Asha Khatri 
-
-Lorenz Scheller
-
-Neelkanth Tripathi 
-
-Divyank Gupta 
-
-<h1> 📬 Team Members (Part 2) </h1>
+<h1> 📬 Team Members P2 </h1>
 
 <table>
   <tr>
