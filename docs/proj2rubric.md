@@ -10,7 +10,7 @@
 |1|Docs: what: point descriptions of each class/function (in isolation)  |https://github.com/shahrk/polly/blob/main/backend/README.md |
 |.5|Number of commits: by different people  |https://github.com/shahrk/polly/graphs/contributors |
 |1|issues are being closed | https://github.com/shahrk/polly/issues|
-|.5|issues are discussed before they are closed | Discussed on Whatsapp(https://github.com/shahrk/polly/blob/main/images/IssueDiscussion1.jpeg,https://github.com/shahrk/polly/blob/main/images/IssueDiscussion2.jpeg ), Evidence in Github Issue comments.|
+|.5|issues are discussed before they are closed | Discussed on Whatsapp(https://github.com/shahrk/polly/blob/main/images/IssueDiscussion1.jpeg,  https://github.com/shahrk/polly/blob/main/images/IssueDiscussion2.jpeg ), Evidence in Github Issue comments.|
 |.5|Use of syntax checkers. | https://github.com/shahrk/polly/blob/main/backend/package.json |
 |1|Issues reports: there are many  | https://github.com/shahrk/polly/issues|
 |.5|Use of code formatters. | https://github.com/shahrk/polly/blob/main/frontend/.prettierrc.json, https://github.com/shahrk/polly/blob/main/backend/.eslintrc.json |
