@@ -106,3 +106,13 @@ handler
  - Input : RoomID
  - Output : answerId, qid, count
  - Description: : Player and Host can view the statistics of the poll with this API. The API returns count for each answerID which can then be fed to client to display it via visuals like graph, piechaart etc
+
+ 6. Fetch Question Data
+
+ - API Relative Path : /fetch-question-data
+ - HTTP Type : Post
+ - Headers : authToken
+ - Usage : Players can use this API to fetch questions whenever added by the admin in room
+ - Input : RoomKey
+ - Output : questionData
+ - Description: : Player can use this api to refresh question data incase new questions are posted by admin. The API returns question data which contains questions as well as correct answer. This can be fed to client to display it in the form of MCQ questions.
